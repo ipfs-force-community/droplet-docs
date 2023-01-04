@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>大数据集数据准备 | 水滴</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/assets/droplet-icon.png">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-GRVZ8072DQ"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GRVZ8072DQ');</script>
+    <meta name="description" content="水滴，原Venus订单服务，是一个Filecoin存储订单解决方案">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e9c2d8a.css" as="style"><link rel="preload" href="/assets/js/app.5c7b9257.js" as="script"><link rel="preload" href="/assets/js/2.80641b54.js" as="script"><link rel="preload" href="/assets/js/27.20a942c5.js" as="script"><link rel="prefetch" href="/assets/js/10.f067a250.js"><link rel="prefetch" href="/assets/js/11.2a60a7f2.js"><link rel="prefetch" href="/assets/js/12.27a7dfea.js"><link rel="prefetch" href="/assets/js/13.647f3f5f.js"><link rel="prefetch" href="/assets/js/14.092a8cc9.js"><link rel="prefetch" href="/assets/js/15.652fbcf4.js"><link rel="prefetch" href="/assets/js/16.0e2d3efd.js"><link rel="prefetch" href="/assets/js/17.6f5cd908.js"><link rel="prefetch" href="/assets/js/18.cb4740f8.js"><link rel="prefetch" href="/assets/js/19.86f5e9bc.js"><link rel="prefetch" href="/assets/js/20.87d9d115.js"><link rel="prefetch" href="/assets/js/21.e0f0cd26.js"><link rel="prefetch" href="/assets/js/22.6790e2b8.js"><link rel="prefetch" href="/assets/js/23.b889e66d.js"><link rel="prefetch" href="/assets/js/24.469229e7.js"><link rel="prefetch" href="/assets/js/25.38ababb2.js"><link rel="prefetch" href="/assets/js/26.4e81194a.js"><link rel="prefetch" href="/assets/js/3.2931d566.js"><link rel="prefetch" href="/assets/js/4.06777882.js"><link rel="prefetch" href="/assets/js/5.d51f6b5b.js"><link rel="prefetch" href="/assets/js/6.93b48b5a.js"><link rel="prefetch" href="/assets/js/7.a6463af7.js"><link rel="prefetch" href="/assets/js/8.716e2bac.js"><link rel="prefetch" href="/assets/js/9.c7645ff2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e9c2d8a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><img src="/assets/droplet-icon.png" alt="水滴" class="logo"> <span class="site-name can-hide">水滴</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/intro/" class="nav-link router-link-active">
+  介绍
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/intro/prep-datasets.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/intro/prep-datasets.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/zh/intro/" class="nav-link router-link-active">
+  介绍
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/intro/prep-datasets.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/intro/prep-datasets.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>简述</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/" aria-current="page" class="sidebar-link">概要</a></li><li><a href="/zh/intro/architecture.html" class="sidebar-link">架构</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/getting-started.html" class="sidebar-link">部署</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/market-client-config.html" class="sidebar-link">market-client配置</a></li><li><a href="/zh/intro/market-config.html" class="sidebar-link">venus-market配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>订单</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/prep-datasets.html" aria-current="page" class="active sidebar-link">大数据集准备</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/intro/prep-datasets.html#大数据集数据准备" class="sidebar-link">大数据集数据准备</a></li><li class="sidebar-sub-header"><a href="/zh/intro/prep-datasets.html#下载大数据集" class="sidebar-link">下载大数据集</a></li><li class="sidebar-sub-header"><a href="/zh/intro/prep-datasets.html#大数据的选择" class="sidebar-link">大数据的选择</a></li><li class="sidebar-sub-header"><a href="/zh/intro/prep-datasets.html#go-graphsplit" class="sidebar-link">go-graphsplit</a></li><li class="sidebar-sub-header"><a href="/zh/intro/prep-datasets.html#切piece" class="sidebar-link">切piece</a></li><li class="sidebar-sub-header"><a href="/zh/intro/prep-datasets.html#venus体系接收订单" class="sidebar-link">Venus体系接收订单</a></li></ul></li><li><a href="/zh/intro/migrate-offline-deal.html" class="sidebar-link">迁移离线订单</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/other.html" class="sidebar-link">其他</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="大数据集数据准备"><a href="#大数据集数据准备" class="header-anchor">#</a> 大数据集数据准备</h2> <p>以<code>aws</code>的开源大数据仓库为基础数据，下载完成后使用<code>filedrive-team</code>开源的<a href="https://github.com/filedrive-team/go-graphsplit.git" target="_blank" rel="noopener noreferrer">go-graphsplit<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+进行切割成指定大小的<code>piece</code>文件(建议切成16-32G)，移动到<code>venus-cluster</code>和<code>venus-maket</code>共用的<code>pieceStore</code>路径下。</p> <h2 id="下载大数据集"><a href="#下载大数据集" class="header-anchor">#</a> 下载大数据集</h2> <p>由于下载的目标数据集过于庞大，建议存放在存储服务器上，分批下载数据集；需要使用aws工具进行下载</p> <p>1、下载aws命令行工具
+centos系统:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ yum <span class="token function">install</span> -y awscli
+</code></pre></div><p>ubuntu系统:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">apt</span> <span class="token function">install</span> -y awscli
+</code></pre></div><p>2、查看数据集大小，并下载文件</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ aws s3 <span class="token function">ls</span> s3://stpubdata/tess/public/ffi/s0006/2018 --recursive --human-readable --summarize --no-sign-request
+
+Total Objects: <span class="token number">23568</span>
+Total Size: <span class="token number">1.2</span> TiB
+</code></pre></div><p>开始下载文件到<code>/mnt/nas/venus-data</code>目录下:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">nohup</span> aws s3 <span class="token function">sync</span> s3://stpubdata/tess/public/ffi/s0006/2018 /mnt/nas/venus-data/tess/public/ffi/s0006/2018 --no-sign-request <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&gt;</span> download.log <span class="token operator">&amp;</span>
+</code></pre></div><p>下载速度根据用户自身的机房出口网络情况而定</p> <h2 id="大数据的选择"><a href="#大数据的选择" class="header-anchor">#</a> 大数据的选择</h2> <div class="language-url extra-class"><pre class="language-text"><code>https://github.com/awslabs/open-data-registry/tree/main/datasets
+</code></pre></div><p>里面包含<code>aws</code>所有开源的大数据集，请与<code>LDN申请人</code>确认所下载的大数据是否符合<code>LDN</code>申请的数据类型。</p> <p>例如:开普勒的光度测量数据，可以看到<code>github上open-data-registry</code>仓库下有一个<code>k2.yaml</code>的文件;
+只需在<code>aws</code>仓库后跟上大数据集名称，就可以在浏览器上得到下载的地址...</p> <div class="language-url extra-class"><pre class="language-text"><code>https://registry.opendata.aws/k2/
+</code></pre></div><h2 id="go-graphsplit"><a href="#go-graphsplit" class="header-anchor">#</a> go-graphsplit</h2> <p>编译<code>go-graphsplit</code>用于切<code>piece</code>工具</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/filedrive-team/go-graphsplit.git
+
+<span class="token builtin class-name">cd</span> go-graphsplit
+
+<span class="token comment"># get submodules</span>
+<span class="token function">git</span> submodule update --init --recursive
+
+<span class="token comment"># build filecoin-ffi</span>
+<span class="token function">make</span> ffi
+
+<span class="token function">make</span>
+</code></pre></div><h2 id="切piece"><a href="#切piece" class="header-anchor">#</a> 切piece</h2> <p>在<code>piece</code>过程中，通过<code>TMPDIR</code>变量来指定切过程中临时文件存放的路径，默认是在<code>/tmp</code>目录下，如果使用普通的系统盘做为临时数据目录，可能会因为系统盘的IO不足，导致进程报出<strong>Bus error</strong>错误后异常退出。</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token assign-left variable">TMPDIR</span><span class="token operator">=</span>/mnt/nvme01 /root/graphsplit chunk <span class="token punctuation">\</span>
+--car-dir<span class="token operator">=</span>/mnt/nas/venus-data/16g-pice-data <span class="token punctuation">\</span>
+--slice-size<span class="token operator">=</span><span class="token number">17179869184</span> <span class="token punctuation">\</span>
+--parallel<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+--graph-name<span class="token operator">=</span>gs-test <span class="token punctuation">\</span>
+--calc-commp <span class="token punctuation">\</span>
+--rename <span class="token punctuation">\</span>
+--parent-path<span class="token operator">=</span>/mnt/nas/venus-data/tess/ <span class="token punctuation">\</span>
+/mnt/nas/venus-data/tess/ <span class="token operator">&gt;&gt;</span> /root/nas-nas-para15-30.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">提示</p> <p><code>--car-dir</code>: 指定切割完成后<code>CAR</code>文件存储的路径；
+<code>--slice-size</code>: 指定切割后输出的的<code>piece</code>文件大小，以<code>byte</code>为基础单位；1024 * 1024 * 1024 = 1073741824 这个就表示是<code>1G</code>的<code>piece</code>文件, 推荐大小为 <code>16G</code>(<code>17179869184</code>) 或 <code>32G</code>(<code>34359738368</code>)；
+<code>--parallel</code>: 指定并发的数量，值越大消耗的CPU和内存会越高；
+<code>--calc-commp</code>: 计算<code>commp</code>的值；
+<code>--rename</code>: 将<code>CAR</code>文件自动转换成piece文件；</p></div> <p>在切割完成后，在<code>--car-dir</code>指定的目录下会有很多pice文件和一个<code>manifest.csv</code>文件；
+把<code>piece</code>文件移到<code>venus-market</code>和<code>venus-sector-manager</code>共享的<code>pieceStore</code>路径下。</p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p><code>manifest.csv</code>包含了发单的必要信息。</p></div> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>期望DataCap订单的生命周期，默认是生命周期是530天，订单需要在7天内封装完成<code>PreCommitSector</code>消息上链，不然DataCap订单会直接过期。</p></div> <h2 id="venus体系接收订单"><a href="#venus体系接收订单" class="header-anchor">#</a> Venus体系接收订单</h2> <h3 id="venus-market查看收到订单状态"><a href="#venus-market查看收到订单状态" class="header-anchor">#</a> venus-market查看收到订单状态</h3> <p>当订单的状态为<code>undefine</code>，就表示此订单等待<code>venus-sector-manager</code>将订单转换成扇区<code>id</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>venus-market storage-deals list
+/root/.venusmarket
+ProposalCid  DealId  State              PieceState  Client                                     Provider  Size    Price  Duration
+<span class="token punctuation">..</span>.hbgguc6a  <span class="token number">172163</span>  StorageDealWait  Undefind    t1yusfltophrl3z5zgemgr3pwgg3nzdjbjky          t0xxxx   16GiB   <span class="token number">0</span> FIL  <span class="token number">1059840</span>
+<span class="token punctuation">..</span>.t2wycjiq  <span class="token number">172164</span>  StorageDealWait  Undefind    t1yusfltophrl3z5zgemgr3pwgg3nzdjbjky          t0xxxx   16GiB   <span class="token number">0</span> FIL  <span class="token number">1059840</span>
+<span class="token punctuation">..</span>.5tkvirfe  <span class="token number">172165</span>  StorageDealWait  Undefind    t1yusfltophrl3z5zgemgr3pwgg3nzdjbjky          t0xxxx   16GiB   <span class="token number">0</span> FIL  <span class="token number">1059840</span>
+<span class="token punctuation">..</span>.btsawgt2  <span class="token number">172166</span>  StorageDealWait  Undefind    t1yusfltophrl3z5zgemgr3pwgg3nzdjbjky          t0xxxx   16GiB   <span class="token number">0</span> FIL  <span class="token number">1059840</span>
+<span class="token punctuation">..</span>.feczgggg  <span class="token number">172167</span>  StorageDealWait  Undefind    t1yusfltophrl3z5zgemgr3pwgg3nzdjbjky          t0xxxx   16GiB   <span class="token number">0</span> FIL  <span class="token number">1059840</span>
+</code></pre></div><h3 id="venus-sector-manager配置注意事项"><a href="#venus-sector-manager配置注意事项" class="header-anchor">#</a> venus-sector-manager配置注意事项</h3> <p>确认配置文件<code>.venus-sector-manager/sector-manager.cfg</code>中的<strong>Enabled和EnableDeals</strong>的值都为<strong>true</strong>，表示开启封装算力和开启接入封装订单任务。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>Miners.Sector<span class="token punctuation">]</span>
+InitNumber <span class="token operator">=</span> <span class="token number">1000</span>
+MaxNumber <span class="token operator">=</span> <span class="token number">1000000</span>
+Enabled <span class="token operator">=</span> <span class="token boolean">true</span>
+EnableDeals <span class="token operator">=</span> <span class="token boolean">true</span>
+LifetimeDays <span class="token operator">=</span> <span class="token number">210</span>
+</code></pre></div><p><code>venus-worker</code>需要在连接<code>venus-sector-manager</code>时需要携带<code>token</code>，才可以获取到<code>Piece</code>数据</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>sector_manager<span class="token punctuation">]</span>
+  <span class="token comment"># 构造 rpc 客户端时使用的连接地址，必填项，字符串类型</span>
+  rpc_client.addr <span class="token operator">=</span> <span class="token string">&quot;/ip4/192.168.100.1/tcp/1789&quot;</span>
+  rpc_client.headers <span class="token operator">=</span> <span class="token punctuation">{</span> User-Agent <span class="token operator">=</span> <span class="token string">&quot;jsonrpc-core-client&quot;</span> <span class="token punctuation">}</span>
+  piece_token <span class="token operator">=</span> <span class="token string">&quot;eyJhbGciOiJIUzxxxxxxxx.eyJuYW1lIjoibGpoOG1xxx.gY3ymGxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>
+  
+  
+<span class="token punctuation">[</span><span class="token punctuation">[</span>sealing_thread<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  sealing.enable_deals <span class="token operator">=</span> <span class="token boolean">true</span>
+  sealing.max_retries <span class="token operator">=</span> <span class="token number">5</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ipfs-force-community/damocles-docs/edit/main/docs/zh/intro/prep-datasets.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2023/1/4 02:52:41</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/zh/intro/market-config.html" class="prev">
+        venus-market配置
+      </a></span> <span class="next"><a href="/zh/intro/migrate-offline-deal.html">
+        迁移离线订单
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.5c7b9257.js" defer></script><script src="/assets/js/2.80641b54.js" defer></script><script src="/assets/js/27.20a942c5.js" defer></script>
+  </body>
+</html>

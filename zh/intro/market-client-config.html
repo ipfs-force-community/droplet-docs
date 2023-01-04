@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Market Client 配置解释 | 水滴</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/assets/droplet-icon.png">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-GRVZ8072DQ"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GRVZ8072DQ');</script>
+    <meta name="description" content="水滴，原Venus订单服务，是一个Filecoin存储订单解决方案">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e9c2d8a.css" as="style"><link rel="preload" href="/assets/js/app.5c7b9257.js" as="script"><link rel="preload" href="/assets/js/2.80641b54.js" as="script"><link rel="preload" href="/assets/js/23.b889e66d.js" as="script"><link rel="prefetch" href="/assets/js/10.f067a250.js"><link rel="prefetch" href="/assets/js/11.2a60a7f2.js"><link rel="prefetch" href="/assets/js/12.27a7dfea.js"><link rel="prefetch" href="/assets/js/13.647f3f5f.js"><link rel="prefetch" href="/assets/js/14.092a8cc9.js"><link rel="prefetch" href="/assets/js/15.652fbcf4.js"><link rel="prefetch" href="/assets/js/16.0e2d3efd.js"><link rel="prefetch" href="/assets/js/17.6f5cd908.js"><link rel="prefetch" href="/assets/js/18.cb4740f8.js"><link rel="prefetch" href="/assets/js/19.86f5e9bc.js"><link rel="prefetch" href="/assets/js/20.87d9d115.js"><link rel="prefetch" href="/assets/js/21.e0f0cd26.js"><link rel="prefetch" href="/assets/js/22.6790e2b8.js"><link rel="prefetch" href="/assets/js/24.469229e7.js"><link rel="prefetch" href="/assets/js/25.38ababb2.js"><link rel="prefetch" href="/assets/js/26.4e81194a.js"><link rel="prefetch" href="/assets/js/27.20a942c5.js"><link rel="prefetch" href="/assets/js/3.2931d566.js"><link rel="prefetch" href="/assets/js/4.06777882.js"><link rel="prefetch" href="/assets/js/5.d51f6b5b.js"><link rel="prefetch" href="/assets/js/6.93b48b5a.js"><link rel="prefetch" href="/assets/js/7.a6463af7.js"><link rel="prefetch" href="/assets/js/8.716e2bac.js"><link rel="prefetch" href="/assets/js/9.c7645ff2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e9c2d8a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><img src="/assets/droplet-icon.png" alt="水滴" class="logo"> <span class="site-name can-hide">水滴</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/intro/" class="nav-link router-link-active">
+  介绍
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/intro/market-client-config.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/zh/intro/" class="nav-link router-link-active">
+  介绍
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/intro/market-client-config.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>简述</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/" aria-current="page" class="sidebar-link">概要</a></li><li><a href="/zh/intro/architecture.html" class="sidebar-link">架构</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/getting-started.html" class="sidebar-link">部署</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/market-client-config.html" aria-current="page" class="active sidebar-link">market-client配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/intro/market-client-config.html#market-client-网络配置" class="sidebar-link">Market Client 网络配置</a></li><li class="sidebar-sub-header"><a href="/zh/intro/market-client-config.html#venus-组件服务配置" class="sidebar-link">venus 组件服务配置</a></li><li class="sidebar-sub-header"><a href="/zh/intro/market-client-config.html#其他配置" class="sidebar-link">其他配置</a></li></ul></li><li><a href="/zh/intro/market-config.html" class="sidebar-link">venus-market配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>订单</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/prep-datasets.html" class="sidebar-link">大数据集准备</a></li><li><a href="/zh/intro/migrate-offline-deal.html" class="sidebar-link">迁移离线订单</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/intro/other.html" class="sidebar-link">其他</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="market-client-配置解释"><a href="#market-client-配置解释" class="header-anchor">#</a> Market Client 配置解释</h1> <p>market-client 的一份典型的配置如下</p> <div class="language- extra-class"><pre class="language-text"><code>
+SimultaneousTransfersForRetrieval = 20
+SimultaneousTransfersForStorage = 20
+
+[DefaultMarketAddress]
+  Addr = &quot;t3qkgm5h7nmusacfggd744w7fdj45rn6iyl7n6s6lr34t4qlfebiphmm3vxtwc4a4acqi4nv3pqk6h7ddqqz5q&quot;
+  Account = &quot;&quot;
+
+[API]
+  ListenAddress = &quot;/ip4/127.0.0.1/tcp/41231/ws&quot;
+  RemoteListenAddress = &quot;&quot;
+  Secret = &quot;&quot;
+  Timeout = &quot;30s&quot;
+
+[Libp2p]
+  ListenAddresses = [&quot;/ip4/0.0.0.0/tcp/34123&quot;, &quot;/ip6/::/tcp/0&quot;]
+  AnnounceAddresses = []
+  NoAnnounceAddresses = []
+  PrivateKey = &quot;&quot;
+
+[Node]
+  Url = &quot;/ip4/192.168.200.106/tcp/3453&quot;
+  Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.0fylyMSNjp8dkTrCLYkFQSjO9FokDKXrl5dqGpMDaOE&quot;
+
+[Messager]
+  Url = &quot;&quot;
+  Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.0fylyMSNjp8dkTrCLYkFQSjO9FokDKXrl5dqGpMDaOE&quot;
+
+[Signer]
+  Type = &quot;&quot;
+  Url = &quot;&quot;
+  Token = &quot;&quot;
+
+</code></pre></div><p>其中，可以分成三个部分： client 网络配置，venus 服务组件的配置和 其他配置</p> <h2 id="market-client-网络配置"><a href="#market-client-网络配置" class="header-anchor">#</a> Market Client 网络配置</h2> <p>这部分的配置决定了venus client 和外界交互的接口</p> <h3 id="api"><a href="#api" class="header-anchor">#</a> [API]</h3> <p>market-client 对外提供服务的接口</p> <div class="language- extra-class"><pre class="language-text"><code>[API]
+# market-client 提供服务监听的地址
+# 字符串类型，必选项，默认为:&quot;/ip4/127.0.0.1/tcp/41235&quot;
+ListenAddress = &quot;/ip4/127.0.0.1/tcp/41235&quot;
+
+# 保留字段
+RemoteListenAddress = &quot;&quot;
+
+# 密钥用于加密通信
+#字符串类型 可选项（没有则自动生成）
+Secret = &quot;878f9c1f88c6f68ee7be17e5f0848c9312897b5d22ff7d89ca386ed0a583da3c&quot;
+
+#保留字段
+Timeout = &quot;30s&quot;
+</code></pre></div><h3 id="libp2p"><a href="#libp2p" class="header-anchor">#</a> [Libp2p]</h3> <p>在P2P网络中通信时使用的 通信地址</p> <div class="language- extra-class"><pre class="language-text"><code>[Libp2p]
+# 监听的网络地址
+# 字符串数组 必选 默认为:[&quot;/ip4/0.0.0.0/tcp/58418&quot;, &quot;/ip6/::/tcp/0&quot;]
+ListenAddresses = [&quot;/ip4/0.0.0.0/tcp/58418&quot;, &quot;/ip6/::/tcp/0&quot;]
+
+# 保留字段
+AnnounceAddresses = []
+
+# 保留字段
+NoAnnounceAddresses = []
+
+# 用于p2p加密通信的私钥
+# 字符串 可选（没设置则自动生成）
+PrivateKey = &quot;08011240ae580daabbe087007d2b4db4e880af10d582215d2272669a94c49c854f36f99c35&quot;
+</code></pre></div><h2 id="venus-组件服务配置"><a href="#venus-组件服务配置" class="header-anchor">#</a> venus 组件服务配置</h2> <p>当market-client接入venus组件使用时，需要配置相关组件的API。</p> <h3 id="node"><a href="#node" class="header-anchor">#</a> [Node]</h3> <p>venus链服务接入配置</p> <div class="language- extra-class"><pre class="language-text"><code>[Node]
+# 链服务的入口
+# 字符串类型 必选（也可以直接通过命令行的--node-url flag 进行配置）
+Url = &quot;/ip4/192.168.200.128/tcp/3453&quot;
+
+# venus 系列组件的鉴权token
+# 字符串类型 必选（也可以直接通过命令行的 --auth-token flag 进行配置）
+Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZm9yY2VuZXQtbnYxNiIsInBlcm0iOiJhZG1pbiIsImV4dCI6IiJ9.PuzEy1TlAjjNiSUu_tbHi2XPUritDLm9Xf5UW3MHRe8&quot;
+
+</code></pre></div><h3 id="messager"><a href="#messager" class="header-anchor">#</a> [Messager]</h3> <p>venus 消息服务接入配置</p> <div class="language- extra-class"><pre class="language-text"><code>[Messager]
+# 消息服务入口
+# 字符串类型 必选（也可以直接通过命令行的 --messager-url flag 进行配置）
+Url = &quot;/ip4/192.168.200.128/tcp/39812/&quot;
+
+# venus 系列组件的鉴权token
+# 字符串类型 必选（也可以直接通过命令行的 --auth-token flag 进行配置）
+Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZm9yY2VuZXQtbnYxNiIsInBlcm0iOiJhZG1pbiIsImV4dCI6IiJ9.PuzEy1TlAjjNiSUu_tbHi2XPUritDLm9Xf5UW3MHRe8&quot;
+</code></pre></div><h3 id="signer"><a href="#signer" class="header-anchor">#</a> [Signer]</h3> <p>venus 提供签名服务的组件
+在 market-client 只能使用 wallet 类型的签名服务</p> <div class="language- extra-class"><pre class="language-text"><code>[Signer]
+# 签名服务组件的类型
+# 字符串类型  只能是&quot;wallet&quot;
+Type = &quot;wallet&quot;
+
+# 签名服务入口
+# 字符串类型 必选（也可以直接通过命令行的 --signer-url flag 进行配置）
+Url = &quot;/ip4/192.168.200.128/tcp/5678/&quot;
+
+# wallet 用于鉴权的token
+# 字符串类型 必选
+Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZm9yY2VuZXQtbnYxNiIsInBlcm0iOiJhZG1pbiIsImV4dCI6IiJ9.PuzEy1TlAjjNiSUu_tbHi2XPUritDLm9Xf5UW3MHRe8&quot;
+</code></pre></div><h2 id="其他配置"><a href="#其他配置" class="header-anchor">#</a> 其他配置</h2> <div class="language- extra-class"><pre class="language-text"><code># 获取数据订单进行同时传输的最大数量
+# 整数类型 默认：20
+SimultaneousTransfersForRetrieval = 20
+
+# 存储订单同时进行传输的最大数量
+# 整数类型 默认：20
+SimultaneousTransfersForStorage = 20
+
+# 当前market-client的默认地址
+# 字符串类型 可选 （也可以直接通过命令行的 --addr flag 进行配置）
+DefaultMarketAddress = &quot;t3qkgm5h7nmusacfggd744w7fdj45rn6iyl7n6s6lr34t4qlfebiphmm3vxtwc4a4acqi4nv3pqk6h7ddqqz5q:username&quot;
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ipfs-force-community/damocles-docs/edit/main/docs/zh/intro/market-client-config.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/zh/intro/getting-started.html" class="prev">
+        部署
+      </a></span> <span class="next"><a href="/zh/intro/market-config.html">
+        venus-market配置
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.5c7b9257.js" defer></script><script src="/assets/js/2.80641b54.js" defer></script><script src="/assets/js/23.b889e66d.js" defer></script>
+  </body>
+</html>
