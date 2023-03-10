@@ -98,7 +98,7 @@ module.exports = {
                         title: 'Deployment',
                         collapsable: false,
                         children: [
-                            ['Using-venus-market.md', 'Getting started'],
+                            ['getting-started.md', 'Getting started', "https://github.com/filecoin-project/venus-market/blob/master/docs/en/getting-started.md"],
                             ['migrate_market_v1_to_v2.md', 'Upgrading to version 2.0'],
                         ]
                     },
