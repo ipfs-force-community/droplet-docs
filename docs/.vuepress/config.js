@@ -136,8 +136,16 @@ module.exports = {
                 description: '执剑人（原Venus算力服务）是一个Filecoin存储算力解决方案',
                 nav: [
                 {
-                    text: '介绍',
+                    text: '功能介绍',
                     link: '/zh/intro/'
+                },
+                {
+                    text: '部署/运维',
+                    link: '/zh/operation/'
+                },
+                {
+                    text: '研发/设计',
+                    link: '/zh/developer/'
                 },
                 {
                     text: '关于',
@@ -146,18 +154,20 @@ module.exports = {
                 ],
                 sidebar: {
                     '/zh/intro/': [{
-                        title: '简述',
+                        title: '功能特性',
                         collapsable: false,
                         children: [
                             ['', '概要'],
                             ['architecture.md', '架构'],
                         ]
                     },
+                    ],
+                    '/zh/operation/': [
                     {
                         title: '部署',
                         collapsable: false,
                         children: [
-                            ['getting-started.md', '部署'],
+                            ['', '快速启用'],
                         ]
                     },
                     {
@@ -169,18 +179,31 @@ module.exports = {
                         ]
                     },
                     {
-                        title: '订单',
+                        title: '运维',
                         collapsable: false,
                         children: [
                             ['prep-datasets.md', '大数据集准备'],
                             ['migrate-offline-deal.md', '迁移离线订单', "https://github.com/filecoin-project/venus-market/blob/master/docs/zh/%E5%A6%82%E4%BD%95%E8%BF%81%E7%A7%BB%E7%A6%BB%E7%BA%BF%E8%AE%A2%E5%8D%95.md"],
+                            ['extend-claim.md', 'DC订单过续期', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/datacap%E7%BB%AD%E6%9C%9F.md"],
+                            ['deal-filter.md', '订单过滤器', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%AE%A2%E5%8D%95%E8%BF%87%E6%BB%A4%E5%99%A8.md"],
+                            ['metrics.md', 'Metrics 指标', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/metric%E6%8C%87%E6%A0%87%E8%A7%A3%E9%87%8A.md"],
+                            ['rebuild-signature.md', 'Metrics 指标', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E7%AD%BE%E5%90%8D%E9%87%8D%E6%9E%84.md"],
+                        ]
+                    },
+                    ],
+                    '/zh/developer/': [{
+                        title: '功能设计',
+                        collapsable: false,
+                        children: [
+                            ['', '多节点配置文件支持'],
                         ]
                     },
                     {
-                        title: '其他',
+                        title: '探索/调研',
                         collapsable: false,
                         children: [
-                            ['other.md', '其他'],
+                            ['understand-boost.md', 'Boost 调研'],
+                            ['boost-mk-1-2.md', 'Boost 协议集成'],
                         ]
                     },
                     ],
