@@ -1,0 +1,534 @@
+# 快速启用
+
+
+## 概述
+
+`venus-market` 是 `venus` 系统中的市场服务组件，由两部分组成：`venus-market` 和 `market-client`，通俗理解为市场服务端和客户端。
+
+- `venus-market` 的服务对象是存储提供商；
+
+- `market-client` 的服务对象是有检索需求或存储需求的用户。
+
+`venus-market` 的市场服务分为存储市场和检索市场，其一般流程如下：
+
+
+
+存储流程：
+
+| 阶段                                  | 步骤                                                                                                 | 说明                                                                       |
+|-------------------------------------|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| 启动 `venus-market` 和 `market-client` | 1. 配置和启动[venus-market](#配置启动venus-market) <br> 2. 配置和启动[market-client](#配置启动market-client)         |                                                                          |
+| 代理 `miners` 的 `libp2p` 监听服务         | 通过 `venus-market` [代理 `miners` 的 `libp2p` 监听服务](#venus-market代理libp2p监听)                           |                                                                          |
+| 为 `miners` 挂单                       | 通过 `venus-market` [挂单](#挂单)                                                                        |                                                                          |
+| 指定 `miner` 发单                       | 1. 通过 `market-client` [导入待存储的数据](#导入待存储的数据) <br> 2. 根据需求[选择合适的挂单](#选择挂单) <br> 3. [发起存储订单](#发起存储订单) | 发单之后，需要一定时间执行订单交易流程，订单被确认后，存储提供商对订单中数据进行封装并提交证明，`venus-market` 负责跟踪订单状态。 |
+
+检索流程：
+
+| 阶段 | 步骤  | 说明 |
+| ---- | ---- | ---- |
+| 启动 `venus-market` 和 `market-client` | 1. 配置和启动[venus-market](#配置启动venus-market) <br> 2. 配置和启动[market-client](#配置启动market-client) |  |
+| 设置检索价格及收款地址 | 存储供应商通过 `venus-market` [设置检索挂单](#检索挂单) | |
+| 提交数据检索订单 | [提交数据检索订单](#提交数据检索订单) | 提交数据检索订单之后，开始执行检索交流流程，会按照协议分批次回传数据并将所需费用转给收款地址。|
+
+:tipping_hand_woman: **无论是存储交易还是检索交易，其协议的执行过程都是自动的，期间会发送消息上链，故需保证交易双方的消息都可以正常签名。交易过程存在必要的 `fil` 流转，相关地址需要有足够的余额，否则交易将无法达成。**
+
+## 配置启动venus-market
+
+### 初始化
+
+- 链上模式
+
+作为链服务中的一个组件，配合`venus-auth`、`venus`、 `venus-messager`、`venus-gateway`等组件一起为注册到链服务的 `miner` 提供市场服务。
+
+```
+./venus-market run \
+--node-url=/ip4/<ip>/tcp/<port> \
+--auth-url=http://<ip>:<port> \
+--gateway-url=/ip4/<ip>/tcp/<port> \
+--messager-url=/ip4/<ip>/tcp/<port> \
+--cs-token=<shared-token> \
+--signer-type="gateway"
+```
+
+生成的服务组件配置参考:
+```toml
+[Node]
+  Url = "/ip4/192.168.200.151/tcp/3455"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+
+[Messager]
+  Url = "/ip4/127.0.0.1/tcp/39812"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+
+[Signer]
+  Type = "gateway"
+  Url = "/ip4/127.0.0.1/tcp/45132"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+
+[AuthNode]
+  Url = "http://127.0.0.1:8989"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+```
+
+:tipping_hand_woman: **`shared-token` 是用于访问其他链服务组件 `API` 时的权限验证，由 `venus-auth` 管理，需要 `admin` 权限。具体请参考 [venus-auth token](https://github.com/filecoin-project/venus-docs/blob/master/docs/zh/cs/deploy-a-cs.md#user及token生成)**
+
+- 链下模式
+
+配合 `lotus fullnode` 的启动方式:
+
+```
+./venus-market run \
+--node-url=/ip4/<ip>/tcp/<port> \
+--cs-token=<token of lotus> \
+--signer-type="lotusnode"
+```
+
+生成的服务组件配置参考:
+```toml
+[Node]
+  Url = "/ip4/127.0.0.1/tcp/1234"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.Ne3JsfHHhN6BgDtdsvLYfUaRC3eJPH_7KrBsMRBdplc"
+
+[Messager]
+  Url = ""
+  Token = ""
+
+[Signer]
+  Type = "lotusnode"
+  Url = "/ip4/127.0.0.1/tcp/1234"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.Ne3JsfHHhN6BgDtdsvLYfUaRC3eJPH_7KrBsMRBdplc"
+
+[AuthNode]
+  Url = ""
+  Token = ""
+```
+
+使用链服务和 `venus-wallet` 的启动方式:
+
+```
+./venus-market run \
+--auth-url=http://<ip>:<port> \
+--node-url=/ip4/<ip>/tcp/<port> \
+--messager-url=/ip4/<ip>/tcp/<port> \
+--cs-token=<token of write-authority> \
+--signer-url=/ip4/<ip>/tcp/<port> \
+--signer-token=<token of venus-wallet> \
+--signer-type="wallet"
+```
+
+生成的服务组件配置参考:
+```toml
+[Node]
+  Url = "/ip4/192.168.200.151/tcp/3455"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+
+[Messager]
+  Url = "/ip4/127.0.0.1/tcp/39812"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+
+[Signer]
+  Type = "wallet"
+  Url = "/ip4/127.0.0.1/tcp/5678/http"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIl19.IVBGlmRW__6g4QGbb1D1Jtr1oyMM6Sqs1tj1GDGR5EQ"
+
+[AuthNode]
+  Url = "http://127.0.0.1:8989"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8"
+```
+
+:tipping_hand_woman: **签名用独立的`venus-wallet`组件，则配置为 `venus-wallet`的监听地址及具有签名权限的 `token`.**
+
+`venus-wallet` 生成具有签名权限的 `token`:
+
+```bash
+$ ./venus-wallet auth api-info --perm=sign
+> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIl19.Vr-OP7RNOozf6XXZuahpk-ZGA7IDa5NJjmU9L_znJ-0:/ip4/127.0.0.1/tcp/5678/http
+```
+
+:tipping_hand_woman: **初始化命令执行成功后将会生成`venus-market repo`,在使用时需根据实际环境配置。**
+
+`venus-market` 首次启动时会生成配置项，默认目录为: `~/.venusmarket/config.toml`,接下来我们将介绍常用配置项。
+
+### 通用配置
+
+`venus-wallet` 的配置项说明参考 [venus-market配置](./venus-market配置解释.md)，这里我们对比较常用的配置项进行说明。
+
+*tips:* 修改完配置文件之后需要重启`venus-market`服务：
+
+```bash
+$ nohup ./venus-market run > market.log 2>&1 &
+```
+> 已经生成 `repo` 之后，初始化所需的参数被写入配置文件，故后续启动无需再加。
+
+#### 链服务配置
+
+- 包括：同步节点，消息节点，签名节点及授权节点。
+
+```yuml
+[Node]
+  Url = "/ip4/192.168.200.21/tcp/3453"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ"
+[Messager]
+  Url = "/ip4/192.168.200.21/tcp/39812"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ"
+[Signer]
+  Type = "gateway"
+  Url = "/ip4/192.168.200.21/tcp/45132"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ"
+[AuthNode]
+  Url = "http://192.168.200.21:8989"
+  Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ"
+```
+
+#### `API` 监听配置
+
+`venus-market` 默认监听端口为 `127.0.0.1:41235`, 为了支持不同网络的访问请求, 需要修改`API`的监听地址:
+
+```yuml
+[API]
+ListenAddress = "/ip4/0.0.0.0/tcp/41235"
+```
+ 
+#### `PublishMsgPeriod` 配置
+
+`venus-market` 在收到 `market-client` 的订单时, 并不会马上就发布 `ClientDealProposal` 消息,会等待一定的时间, 由配置文件中的 `PublishMsgPeriod` 项来控制，在测试时可以将此项设置为较小值减少等待时间。下面的设置，将等待时间设置为10秒。
+
+```yuml
+PublishMsgPeriod = "10s"
+```
+
+#### `PieceStorage` 配置
+
+目前 `venus-market` 支持两种 `Piece` 数据的存储模式：
+- 文件系统
+- 对象存储
+
+```yuml
+[PieceStorage]
+  [[PieceStorage.Fs]]
+    Name = "local"
+    Enable = true
+    Path = "/mnt/pieces"
+  [[PieceStorage.S3]]
+    Name = "oss"
+    Enable = false
+    EndPoint = ""
+    AccessKey = ""
+    SecretKey = ""
+    Token = ""
+```
+
+也可以通过命令配置：
+
+```bash
+# 本地文件系统存储
+./venus-market piece-storage add-fs --path="/piece/storage/path" --name="local"
+
+# 对象存储
+./venus-market piece-storage add-s3 --endpoint=<url> --name="oss"
+```
+
+#### `Miners` 配置
+
+`venus-market` 服务的矿工及每个矿工的参数，配置如下：
+
+```
+[[Miners]]
+  Addr = "f01000"
+  Account = "testuser01"
+  
+  ConsiderOnlineStorageDeals = true
+  ConsiderOfflineStorageDeals = true
+  ConsiderOnlineRetrievalDeals = true
+  ConsiderOfflineRetrievalDeals = true
+  ConsiderVerifiedStorageDeals = true
+  ConsiderUnverifiedStorageDeals = true
+  PieceCidBlocklist = []
+  ExpectedSealDuration = "24h0m0s"
+  MaxDealStartDelay = "336h0m0s"
+  PublishMsgPeriod = "1h0m0s"
+  MaxDealsPerPublishMsg = 8
+  MaxProviderCollateralMultiplier = 2
+  Filter = ""
+  RetrievalFilter = ""
+  TransferPath = ""
+  MaxPublishDealsFee = "0 FIL"
+  MaxMarketBalanceAddFee = "0 FIL"
+  [CommonProviderConfig.RetrievalPricing]
+    Strategy = "default"
+    [CommonProviderConfig.RetrievalPricing.Default]
+      VerifiedDealsFreeTransfer = true
+    [CommonProviderConfig.RetrievalPricing.External]
+      Path = ""
+    [CommonProviderConfig.AddressConfig]
+      DisableWorkerFallback = false
+```
+
+:::tip
+
+如果有多个矿工，将上述配置拷贝一份即可。***如果矿工比较多，那配置文件会很长，考虑优化？***
+
+:::
+
+## venus-market代理libp2p监听
+
+将 `venus-market` 设置为 `miner` 的 `libp2p` 监听代理就是将特定 `miner` 的市场服务的入口设置为当前运行的 `venus-market` 实例。
+
+- 查询 `venus-market` 的对等节点监听地址
+
+```bash
+./venus-market net listen
+
+/ip4/127.0.0.1/tcp/58418/p2p/12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+/ip4/192.168.19.67/tcp/58418/p2p/12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+/ip6/::1/tcp/49770/p2p/12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+```
+
+- 将 `miners` 的 `Mutiaddrs` 和 `peerid` 设置为 `venus-market` 的 `Mutiaddrs` 和 `peerid`     
+
+```bash
+./venus-market actor set-addrs --miner=t01041 /ip4/192.168.19.67/tcp/58418
+Requested multiaddrs change in message bafy2bzaceceqgxmiledunzjwbajpghzzn4iibvxhoifsrz4q2grzsirgznzdg
+
+./venus-market actor set-peer-id --miner=f01041 12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+  Requested peerid change in message bafy2bzacea4ruzf4hvyezzhjkt6hnzz5tpk7ttuw6jmyoadqasqtujypqitp2
+```
+
+- 等待消息上链后，查看 `miner` 的代理信息
+
+```bash
+./venus-market actor info --miner t01041
+peers: 12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+addr: /ip4/192.168.19.67/tcp/58418
+```
+
+## 挂单
+
+### 存储挂单
+
+```bash
+./venus-market storage ask set --price=0.01fil --verified-price=0.02fil --min-piece-size=512b --max-piece-size=512M t01041
+```
+可以通过命令行工具检查定价信息：
+
+```shell
+./venus-market storage ask get t01041
+Price per GiB/Epoch  Verified  Min. Piece Size (padded)  Max. Piece Size (padded)  Expiry (Epoch)  Expiry (Appx. Rem. Time)  Seq. No.
+0.01 FIL             0.02 FIL  512 B                     521 MiB                     161256          719h59m0s                 0
+```
+
+### 检索挂单
+
+存储服务提供商至少应设置收款地址
+
+```bash
+./venus-market retrieve ask set t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
+```
+
+同时，也可以设置数据检索订单的价格，不设置时，默认为0.
+```bash
+./venus-market retrieve ask set \
+--price 0.02fil \
+--unseal-price 0.01fil \
+--payment-interval 1MB \
+t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
+```
+
+
+## 配置启动market-client
+
+`market-client` 正常运行需要同步节点、签名节点（`venus fullnode` 和 `lotus fullnode` 可以作为签名节点）、消息节点（`venus fullnode` 和 `lotus fullnode` 可以作为消息节点）及 `venus-market`，故其可以灵活配置，只要保证消息能够正常签名并上链即可。
+
+`market-client` 需要配置 `--addr` 用来绑定客户的钱包地址，用于支付客户端抵押和检索费用。
+
+这里介绍常用的三种启动方式：
+
+- 接入 `Venus` 链服务
+
+`venus-gateway` 的签名 `API` 只有 `admin` 权限才能访问（安全考虑），也就是只有链服务组件才能访问，故 `market-client` 无法使用，所以用本地的 `venus-wallet` 进行签名。
+
+```shell
+./market-client run \
+--node-url=/ip4/<venus_ip>/tcp/<port> \ 
+--messager-url=/ip4/<venus-messager_ip>/tcp/<port> \
+--auth-token=<user-signed-token> \
+--signer-type=wallet \
+--signer-url=/ip4/<venus-wallet_ip>/tcp/<port> \
+--signer-toke=<wallet-token> \
+--addr=<signer address> \
+```
+> `venus-wallet` 生成具有签名权限的 `token` 请参考上文.
+
+
+- 连接 `lotus fullnode` 启动
+```shell
+./market-client run \
+--node-url=/ip4/<venus_ip>/tcp/<port> \ 
+--node-token=<node-token> \
+--signer-type=lotusnode \
+--addr=<signer address> \
+```
+
+- 连接 `venus fullnode` 启动
+```shell
+./market-client run \
+--node-url=/ip4/<venus_ip>/tcp/<port> \ 
+--node-token=<node-token> \
+--signer-type=wallet \
+--addr=<signer address> \
+```
+
+这些配置项也可以在配置文件中设置，参见[market-client配置](./market-client配置解释.md)
+
+
+## 存储订单
+
+### 导入待存储的数据
+
+```shell
+./market-client data import <file path>
+Import 1642491708527303001, Root bafk2bzacedgv2xqys5ja4gycqipmg543ekxz3tjj6wwfexda352n55ahjldja
+```
+
+### 选择挂单
+
+使用 `market-client` 来查询 `miner` 挂单信息：
+
+```bash
+./market-client storage asks query f01041 
+Ask: t01041
+Price per GiB: 0.02 FIL
+Verified Price per GiB: 0.01 FIL
+Max Piece size: 8 MiB
+Min Piece size: 512 B
+```
+
+### 发起存储订单
+
+```shell
+/market-client storage deals init
+# 输入需要存储的数据的cid, `./market-client data local`命令查看
+Data CID (from lotus client import): bafk2bzacedgv2xqys5ja4gycqipmg543ekxz3tjj6wwfexda352n55ahjldja
+.. calculating data size
+PieceCid:  baga6ea4seaqpz47j4kqdiixpehmzk3uw5c4cmqvs5iyi7xf7rwkepfhdvowdiai  PayLoadSize: 809 PieceSize: 1024
+# 输入数据存储周期
+Deal duration (days): 180
+Miner Addresses (f0.. f0..), none to find: t01041
+.. querying miner asks
+-----
+Proposing from t16qnfduxzpneb2m3rbdasvhgk7rmmo32zpiypkaq
+	Balance: 9499.999999856612207905 FIL
+Piece size: 1KiB (Payload size: 809B)
+Duration: 4320h0m0s
+Total price: ~0.0098876953124352 FIL (0.000000019073486328 FIL per epoch)
+Verified: false
+# 确认是否接受订单价格
+Accept (yes/no): yes
+.. executing
+Deal (t01051) CID: bafyreihiln2ha6eaaos7kuhwpnvjvjlxmjnpsklym6hhucu2z776bf2or4
+```
+
+然后等待订单消息上链，以及存储提供商完成数据封装即可。
+
+`market-client` 查看订单:
+```shell
+./market-client storage deals list
+DealCid      DealId  Provider  State                          On Chain?  Slashed?  PieceCID     Size    Price                    Duration  Verified
+...76bf2or4  0       t01051    StorageDealCheckForAcceptance  N          N         ...dvowdiai  1016 B  0.00992212295525724 FIL  520205    false
+  Message: Provider state: StorageDealPublish
+```
+
+### 线下存储订单
+
+1. 导入订单存储文件
+
+```bash
+./market-client data import ./README.md
+Import 1642643014364955003, Root bafk2bzaceaf4sallirkt63fqrojz5gaut7akiwxrclcsymqelqad7man3hc2c
+```
+
+2.转为CAR文件
+
+```bash
+./market-client data generate-car ./README.md ./readme.md.car
+```
+
+3.计算CAR文件的`CID`和`Piece size`
+
+```shell
+./market-client data commP ./readme.md.car
+CID:  baga6ea4seaqfewgysi3n3cjylkbfknr56vbemb2gwjfvpctqtjgpdweu7o3d6mq
+Piece size:  3.969 KiB
+```
+
+4.发起订单
+
+```bash
+./market-client storage deals init \
+--manual-piece-cid=baga6ea4seaqfewgysi3n3cjylkbfknr56vbemb2gwjfvpctqtjgpdweu7o3d6mq \
+--manual-piece-size=4064 \
+bafk2bzaceaf4sallirkt63fqrojz5gaut7akiwxrclcsymqelqad7man3hc2c \
+f01051 \
+0.01fil \
+518400
+bafyreiecguaxgtmgcanfco6huni4d6h6zs3w3bznermmiurtdos7r6hftm
+```
+
+- `manual-piece-cid`: 在第3步计执行`data commP`后输出的`CID`
+- `manual-piece-size`: 在第3步执行`data commP`后输出的`Piece size`.需要注意的是, 在使用这个参数时, 这个值需要转换成`byte`的大小, 在这里为3.969kib转换成byte的大小是4064.
+之后4个参数分别是:
+- 第一步执行`import`命令后输入的`Root`
+- 矿工ID
+- 协商支付订单的费用`0.01fil`, **这个值必须大于旷工设置的`storage ask`中的最小值, 不然订单会被拒绝掉.
+- 合约周期, 必须大于等于180天, 这个值也需要换成epoch为单位, 每个epoch=30秒, 示例中:518400 = 180天.
+
+最后的输出`bafyreidfs2w7lxacq6zpqck7q4zimyitidxyahojf7dbbuz5zr7irdlmqa`为propose的cid.
+线上订单一样, 此时可以通过market-client查看deal信息, 订单的最后状态会停止在`StorageDealWaitingForData`
+
+```shell
+./market-client storage deals list
+DealCid      DealId  Provider  State                          On Chain?        Slashed?  PieceCID     Size       Price                    Duration  Verified  
+...s7r6hftm  0       t01051    StorageDealCheckForAcceptance  N                N         ...u7o3d6mq  3.969 KiB  5196.63 FIL              519663    false     
+  Message: Provider state: StorageDealWaitingForData
+```
+
+:tipping_hand_woman: **如果 `market-client` 出现下面的内容:**
+```shell
+2022-01-20T12:47:27.966+0800	ERROR	storagemarket_impl	clientstates/client_states.go:324	deal bafyreif2k2e4acraxk33z3llwo5gqmk32tfrdj2kocjanojbfbf6vj72vm failed: adding market funds failed: estimating gas used: message execution failed: exit SysErrInsufficientFunds(6)
+```
+说明钱包余额不足,调用命令 `./market-client actor-funds add 100fil` 充值后重新执行命令.
+
+5. 导入离线订单的数据文件
+需要将之前第2步生成的`.car`文件线下传输到venus-market, 并通过venus-market命令导入数据:
+```shell
+./venus-market storage-deals import-data bafyreiecguaxgtmgcanfco6huni4d6h6zs3w3bznermmiurtdos7r6hftm ./readme.md.car
+```
+
+再次查看状态, 订单状态更新为`StorageDealPublishing`:
+```shell
+./market-client storage deals list
+DealCid      DealId  Provider  State                          On Chain?        Slashed?  PieceCID     Size       Price                    Duration  Verified  
+...s7r6hftm  0       t01051    StorageDealCheckForAcceptance  N                N         ...u7o3d6mq  3.969 KiB  5196.63 FIL              519663    false     
+Message: Provider state: StorageDealPublishing
+```
+
+最后等待订单状态变化为`StorageDealAwaitingPreCommit` 就可以进行订单数据的封装了。
+
+
+## 提交数据检索订单
+
+用户通过 `minerID` 和 `Data CID` 就可以发起数据检索订单
+
+```shell
+./market-client retrieval retrieve --provider t01020 bafk2bzacearla6en6crpouxo72d5lhr3buajbzjippl63bfsd2m7rsyughu42 test.txt
+Recv 0 B, Paid 0 FIL, Open (New), 0s
+Recv 0 B, Paid 0 FIL, DealProposed (WaitForAcceptance), 16ms
+Recv 0 B, Paid 0 FIL, DealAccepted (Accepted), 26ms
+Recv 0 B, Paid 0 FIL, PaymentChannelSkip (Ongoing), 27ms
+Recv 1.479 KiB, Paid 0 FIL, BlocksReceived (Ongoing), 30ms
+Recv 1.479 KiB, Paid 0 FIL, AllBlocksReceived (BlocksComplete), 33ms
+Recv 1.479 KiB, Paid 0 FIL, Complete (CheckComplete), 35ms
+Recv 1.479 KiB, Paid 0 FIL, CompleteVerified (FinalizingBlockstore), 36ms
+Recv 1.479 KiB, Paid 0 FIL, BlockstoreFinalized (Completed), 36ms
+Success
+```
