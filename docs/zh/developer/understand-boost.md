@@ -178,11 +178,11 @@ boost 实现的新的订单发起流程主要是基于 `/fil/storage/mk/1.2.0` �
 
 - 传统的的订单发起流程 (基于 /fil/storage/mk/1.0.1 , /fil/storage/mk/1.1.0 /fil/storage/mk/1.1.1 )
 
-<img src="../../.vuepress/public/research/20221013153319.png" width=800 />
+<img src="https://github.com/ipfs-force-community/venus-core-devs/assets/1591330/0598f5db-0e5d-4c72-a5cf-077cdbf8b265" width=800 />
 
 - boost 提出的新的订单发起流程 (基于 /fil/storage/mk/1.2.0 )
 
-<img src="../../.vuepress/public/research/20221013143419.png" width=800 />
+<img src="https://github.com/ipfs-force-community/venus-core-devs/assets/1591330/bb72ad19-509a-401c-b1eb-31e9a9182679" width=800 />
 
 ##### 相关源码
 
@@ -447,7 +447,7 @@ select {
 
 简要流程
 
-<img src="../../.vuepress/public/research/20221021131654.png" width=800 />
+<img src="https://github.com/ipfs-force-community/venus-core-devs/assets/1591330/e15e8ba0-e9f7-4e01-b6a4-67a5308a9569" width=800 />
 
 相关源码
 
@@ -565,4 +565,4 @@ func (p *Provider) execDealUptoAddPiece(ctx context.Context, deal *types.Provide
 这个过程主要是通过调用 PieceAdder 接口的 AddPiece 方法来实现.
 其中 PieceAdder 主要底层是由 lotus-miner 的 rpc client 来实现的,其依赖路径如下
 
-<img src="../../.vuepress/public/research/20221013231224.png" width=800 />
+<img src="https://github.com/ipfs-force-community/venus-core-devs/assets/1591330/1ac5fe0e-6656-4ea3-8666-bb6cae2eb91a" width=800 />
