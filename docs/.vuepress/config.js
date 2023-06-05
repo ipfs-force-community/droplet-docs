@@ -206,6 +206,14 @@ module.exports = {
                             ['boost-mk-1-2.md', 'Boost 协议集成'],
                         ]
                     },
+                    {
+                        title: 'RPC 接口参考',
+                        collapsable: false,
+                        children: [
+                            ['market-api-v1.md', 'Droplet API v1', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/market/v1/method.md"],
+                            ['market-api-v0.md', 'Droplet API v0', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/market/v0/method.md"],
+                        ]
+                    },
                     ],
                     '/zh/about/': [{
                         title: '',
