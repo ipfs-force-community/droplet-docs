@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速启用 | 水滴</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/assets/droplet-icon.png">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-GRVZ8072DQ"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GRVZ8072DQ');</script>
+    <meta name="description" content="水滴，原Venus订单服务，是一个Filecoin存储订单解决方案">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e9c2d8a.css" as="style"><link rel="preload" href="/assets/js/app.3b2f200c.js" as="script"><link rel="preload" href="/assets/js/2.80641b54.js" as="script"><link rel="preload" href="/assets/js/27.ed4e5bbd.js" as="script"><link rel="prefetch" href="/assets/js/10.f067a250.js"><link rel="prefetch" href="/assets/js/11.2a60a7f2.js"><link rel="prefetch" href="/assets/js/12.27a7dfea.js"><link rel="prefetch" href="/assets/js/13.647f3f5f.js"><link rel="prefetch" href="/assets/js/14.092a8cc9.js"><link rel="prefetch" href="/assets/js/15.ca4ddf49.js"><link rel="prefetch" href="/assets/js/16.94573f36.js"><link rel="prefetch" href="/assets/js/17.fc2c1aac.js"><link rel="prefetch" href="/assets/js/18.9d946796.js"><link rel="prefetch" href="/assets/js/19.7051420e.js"><link rel="prefetch" href="/assets/js/20.5deb1620.js"><link rel="prefetch" href="/assets/js/21.0291b2d4.js"><link rel="prefetch" href="/assets/js/22.5781ecad.js"><link rel="prefetch" href="/assets/js/23.ce31993f.js"><link rel="prefetch" href="/assets/js/24.b6b7b90d.js"><link rel="prefetch" href="/assets/js/25.bf37cf30.js"><link rel="prefetch" href="/assets/js/26.62457e14.js"><link rel="prefetch" href="/assets/js/28.e1445620.js"><link rel="prefetch" href="/assets/js/29.93097c20.js"><link rel="prefetch" href="/assets/js/3.bd29e568.js"><link rel="prefetch" href="/assets/js/30.ee922e83.js"><link rel="prefetch" href="/assets/js/31.42b5ca68.js"><link rel="prefetch" href="/assets/js/32.fc8a53da.js"><link rel="prefetch" href="/assets/js/33.640d7032.js"><link rel="prefetch" href="/assets/js/34.f16373e6.js"><link rel="prefetch" href="/assets/js/35.11244917.js"><link rel="prefetch" href="/assets/js/4.06777882.js"><link rel="prefetch" href="/assets/js/5.d51f6b5b.js"><link rel="prefetch" href="/assets/js/6.93b48b5a.js"><link rel="prefetch" href="/assets/js/7.48216839.js"><link rel="prefetch" href="/assets/js/8.15913162.js"><link rel="prefetch" href="/assets/js/9.41619f00.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e9c2d8a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><img src="/assets/droplet-icon.png" alt="水滴" class="logo"> <span class="site-name can-hide">水滴</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/intro/" class="nav-link">
+  功能介绍
+</a></div><div class="nav-item"><a href="/zh/operation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  部署/运维
+</a></div><div class="nav-item"><a href="/zh/developer/" class="nav-link">
+  研发/设计
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/operation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/zh/intro/" class="nav-link">
+  功能介绍
+</a></div><div class="nav-item"><a href="/zh/operation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  部署/运维
+</a></div><div class="nav-item"><a href="/zh/developer/" class="nav-link">
+  研发/设计
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/operation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/operation/" aria-current="page" class="active sidebar-link">快速启用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/operation/#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/zh/operation/#配置启动venus-market" class="sidebar-link">配置启动venus-market</a></li><li class="sidebar-sub-header"><a href="/zh/operation/#venus-market代理libp2p监听" class="sidebar-link">venus-market代理libp2p监听</a></li><li class="sidebar-sub-header"><a href="/zh/operation/#挂单" class="sidebar-link">挂单</a></li><li class="sidebar-sub-header"><a href="/zh/operation/#配置启动market-client" class="sidebar-link">配置启动market-client</a></li><li class="sidebar-sub-header"><a href="/zh/operation/#存储订单" class="sidebar-link">存储订单</a></li><li class="sidebar-sub-header"><a href="/zh/operation/#提交数据检索订单" class="sidebar-link">提交数据检索订单</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/operation/market-client-config.html" class="sidebar-link">market-client配置</a></li><li><a href="/zh/operation/market-config.html" class="sidebar-link">venus-market配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>运维</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/operation/prep-datasets.html" class="sidebar-link">大数据集准备</a></li><li><a href="/zh/operation/migrate-offline-deal.html" class="sidebar-link">迁移离线订单</a></li><li><a href="/zh/operation/extend-claim.html" class="sidebar-link">DC订单过续期</a></li><li><a href="/zh/operation/deal-filter.html" class="sidebar-link">订单过滤器</a></li><li><a href="/zh/operation/metrics.html" class="sidebar-link">Metrics 指标</a></li><li><a href="/zh/operation/rebuild-signature.html" class="sidebar-link">Metrics 指标</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速启用"><a href="#快速启用" class="header-anchor">#</a> 快速启用</h1> <h2 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h2> <p><code>venus-market</code> 是 <code>venus</code> 系统中的市场服务组件，由两部分组成：<code>venus-market</code> 和 <code>market-client</code>，通俗理解为市场服务端和客户端。</p> <ul><li><p><code>venus-market</code> 的服务对象是存储提供商；</p></li> <li><p><code>market-client</code> 的服务对象是有检索需求或存储需求的用户。</p></li></ul> <p><code>venus-market</code> 的市场服务分为存储市场和检索市场，其一般流程如下：</p> <p>存储流程：</p> <table><thead><tr><th>阶段</th> <th>步骤</th> <th>说明</th></tr></thead> <tbody><tr><td>启动 <code>venus-market</code> 和 <code>market-client</code></td> <td>1. 配置和启动<a href="#%E9%85%8D%E7%BD%AE%E5%90%AF%E5%8A%A8venus-market">venus-market</a> <br> 2. 配置和启动<a href="#%E9%85%8D%E7%BD%AE%E5%90%AF%E5%8A%A8market-client">market-client</a></td> <td></td></tr> <tr><td>代理 <code>miners</code> 的 <code>libp2p</code> 监听服务</td> <td>通过 <code>venus-market</code> <a href="#venus-market%E4%BB%A3%E7%90%86libp2p%E7%9B%91%E5%90%AC">代理 <code>miners</code> 的 <code>libp2p</code> 监听服务</a></td> <td></td></tr> <tr><td>为 <code>miners</code> 挂单</td> <td>通过 <code>venus-market</code> <a href="#%E6%8C%82%E5%8D%95">挂单</a></td> <td></td></tr> <tr><td>指定 <code>miner</code> 发单</td> <td>1. 通过 <code>market-client</code> <a href="#%E5%AF%BC%E5%85%A5%E5%BE%85%E5%AD%98%E5%82%A8%E7%9A%84%E6%95%B0%E6%8D%AE">导入待存储的数据</a> <br> 2. 根据需求<a href="#%E9%80%89%E6%8B%A9%E6%8C%82%E5%8D%95">选择合适的挂单</a> <br> 3. <a href="#%E5%8F%91%E8%B5%B7%E5%AD%98%E5%82%A8%E8%AE%A2%E5%8D%95">发起存储订单</a></td> <td>发单之后，需要一定时间执行订单交易流程，订单被确认后，存储提供商对订单中数据进行封装并提交证明，<code>venus-market</code> 负责跟踪订单状态。</td></tr></tbody></table> <p>检索流程：</p> <table><thead><tr><th>阶段</th> <th>步骤</th> <th>说明</th></tr></thead> <tbody><tr><td>启动 <code>venus-market</code> 和 <code>market-client</code></td> <td>1. 配置和启动<a href="#%E9%85%8D%E7%BD%AE%E5%90%AF%E5%8A%A8venus-market">venus-market</a> <br> 2. 配置和启动<a href="#%E9%85%8D%E7%BD%AE%E5%90%AF%E5%8A%A8market-client">market-client</a></td> <td></td></tr> <tr><td>设置检索价格及收款地址</td> <td>存储供应商通过 <code>venus-market</code> <a href="#%E6%A3%80%E7%B4%A2%E6%8C%82%E5%8D%95">设置检索挂单</a></td> <td></td></tr> <tr><td>提交数据检索订单</td> <td><a href="#%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E6%A3%80%E7%B4%A2%E8%AE%A2%E5%8D%95">提交数据检索订单</a></td> <td>提交数据检索订单之后，开始执行检索交流流程，会按照协议分批次回传数据并将所需费用转给收款地址。</td></tr></tbody></table> <p>💁 <strong>无论是存储交易还是检索交易，其协议的执行过程都是自动的，期间会发送消息上链，故需保证交易双方的消息都可以正常签名。交易过程存在必要的 <code>fil</code> 流转，相关地址需要有足够的余额，否则交易将无法达成。</strong></p> <h2 id="配置启动venus-market"><a href="#配置启动venus-market" class="header-anchor">#</a> 配置启动venus-market</h2> <h3 id="初始化"><a href="#初始化" class="header-anchor">#</a> 初始化</h3> <ul><li>链上模式</li></ul> <p>作为链服务中的一个组件，配合<code>venus-auth</code>、<code>venus</code>、 <code>venus-messager</code>、<code>venus-gateway</code>等组件一起为注册到链服务的 <code>miner</code> 提供市场服务。</p> <div class="language- extra-class"><pre class="language-text"><code>./venus-market run \
+--node-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--auth-url=http://&lt;ip&gt;:&lt;port&gt; \
+--gateway-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--messager-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--cs-token=&lt;shared-token&gt; \
+--signer-type=&quot;gateway&quot;
+</code></pre></div><p>生成的服务组件配置参考:</p> <div class="language-toml extra-class"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">Node</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/192.168.200.151/tcp/3455&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">Messager</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/127.0.0.1/tcp/39812&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">Signer</span><span class="token punctuation">]</span>
+  <span class="token key property">Type</span> <span class="token punctuation">=</span> <span class="token string">&quot;gateway&quot;</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/127.0.0.1/tcp/45132&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">AuthNode</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;http://127.0.0.1:8989&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+</code></pre></div><p>💁 <strong><code>shared-token</code> 是用于访问其他链服务组件 <code>API</code> 时的权限验证，由 <code>venus-auth</code> 管理，需要 <code>admin</code> 权限。具体请参考 <a href="https://github.com/filecoin-project/venus-docs/blob/master/docs/zh/cs/deploy-a-cs.md#user%E5%8F%8Atoken%E7%94%9F%E6%88%90" target="_blank" rel="noopener noreferrer">venus-auth token<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong></p> <ul><li>链下模式</li></ul> <p>配合 <code>lotus fullnode</code> 的启动方式:</p> <div class="language- extra-class"><pre class="language-text"><code>./venus-market run \
+--node-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--cs-token=&lt;token of lotus&gt; \
+--signer-type=&quot;lotusnode&quot;
+</code></pre></div><p>生成的服务组件配置参考:</p> <div class="language-toml extra-class"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">Node</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/127.0.0.1/tcp/1234&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.Ne3JsfHHhN6BgDtdsvLYfUaRC3eJPH_7KrBsMRBdplc&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">Messager</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">Signer</span><span class="token punctuation">]</span>
+  <span class="token key property">Type</span> <span class="token punctuation">=</span> <span class="token string">&quot;lotusnode&quot;</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/127.0.0.1/tcp/1234&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.Ne3JsfHHhN6BgDtdsvLYfUaRC3eJPH_7KrBsMRBdplc&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">AuthNode</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+</code></pre></div><p>使用链服务和 <code>venus-wallet</code> 的启动方式:</p> <div class="language- extra-class"><pre class="language-text"><code>./venus-market run \
+--auth-url=http://&lt;ip&gt;:&lt;port&gt; \
+--node-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--messager-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--cs-token=&lt;token of write-authority&gt; \
+--signer-url=/ip4/&lt;ip&gt;/tcp/&lt;port&gt; \
+--signer-token=&lt;token of venus-wallet&gt; \
+--signer-type=&quot;wallet&quot;
+</code></pre></div><p>生成的服务组件配置参考:</p> <div class="language-toml extra-class"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">Node</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/192.168.200.151/tcp/3455&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">Messager</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/127.0.0.1/tcp/39812&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">Signer</span><span class="token punctuation">]</span>
+  <span class="token key property">Type</span> <span class="token punctuation">=</span> <span class="token string">&quot;wallet&quot;</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;/ip4/127.0.0.1/tcp/5678/http&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIl19.IVBGlmRW__6g4QGbb1D1Jtr1oyMM6Sqs1tj1GDGR5EQ&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">AuthNode</span><span class="token punctuation">]</span>
+  <span class="token key property">Url</span> <span class="token punctuation">=</span> <span class="token string">&quot;http://127.0.0.1:8989&quot;</span>
+  <span class="token key property">Token</span> <span class="token punctuation">=</span> <span class="token string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2hhcmVkLXRva2VuIiwicGVybSI6ImFkbWluIiwiZXh0IjoiIn0.aARqJ_7FSe1KakkBhWlFvsYm-xBLAXBnl9SvTfqsVe8&quot;</span>
+</code></pre></div><p>💁 <strong>签名用独立的<code>venus-wallet</code>组件，则配置为 <code>venus-wallet</code>的监听地址及具有签名权限的 <code>token</code>.</strong></p> <p><code>venus-wallet</code> 生成具有签名权限的 <code>token</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./venus-wallet auth api-info --perm<span class="token operator">=</span>sign
+<span class="token operator">&gt;</span> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIl19.Vr-OP7RNOozf6XXZuahpk-ZGA7IDa5NJjmU9L_znJ-0:/ip4/127.0.0.1/tcp/5678/http
+</code></pre></div><p>💁 <strong>初始化命令执行成功后将会生成<code>venus-market repo</code>,在使用时需根据实际环境配置。</strong></p> <p><code>venus-market</code> 首次启动时会生成配置项，默认目录为: <code>~/.venusmarket/config.toml</code>,接下来我们将介绍常用配置项。</p> <h3 id="通用配置"><a href="#通用配置" class="header-anchor">#</a> 通用配置</h3> <p><code>venus-wallet</code> 的配置项说明参考 <a href="/zh/operation/venus-market配置解释.html">venus-market配置</a>，这里我们对比较常用的配置项进行说明。</p> <p><em>tips:</em> 修改完配置文件之后需要重启<code>venus-market</code>服务：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">nohup</span> ./venus-market run <span class="token operator">&gt;</span> market.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+</code></pre></div><blockquote><p>已经生成 <code>repo</code> 之后，初始化所需的参数被写入配置文件，故后续启动无需再加。</p></blockquote> <h4 id="链服务配置"><a href="#链服务配置" class="header-anchor">#</a> 链服务配置</h4> <ul><li>包括：同步节点，消息节点，签名节点及授权节点。</li></ul> <div class="language-yuml extra-class"><pre class="language-text"><code>[Node]
+  Url = &quot;/ip4/192.168.200.21/tcp/3453&quot;
+  Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ&quot;
+[Messager]
+  Url = &quot;/ip4/192.168.200.21/tcp/39812&quot;
+  Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ&quot;
+[Signer]
+  Type = &quot;gateway&quot;
+  Url = &quot;/ip4/192.168.200.21/tcp/45132&quot;
+  Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ&quot;
+[AuthNode]
+  Url = &quot;http://192.168.200.21:8989&quot;
+  Token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemwiLCJwZXJtIjoiYWRtaW4iLCJleHQiOiIifQ.3u-PInSUmX-8f6Z971M7JBCHYgFVQrvwUjJfFY03ouQ&quot;
+</code></pre></div><h4 id="api-监听配置"><a href="#api-监听配置" class="header-anchor">#</a> <code>API</code> 监听配置</h4> <p><code>venus-market</code> 默认监听端口为 <code>127.0.0.1:41235</code>, 为了支持不同网络的访问请求, 需要修改<code>API</code>的监听地址:</p> <div class="language-yuml extra-class"><pre class="language-text"><code>[API]
+ListenAddress = &quot;/ip4/0.0.0.0/tcp/41235&quot;
+</code></pre></div><h4 id="publishmsgperiod-配置"><a href="#publishmsgperiod-配置" class="header-anchor">#</a> <code>PublishMsgPeriod</code> 配置</h4> <p><code>venus-market</code> 在收到 <code>market-client</code> 的订单时, 并不会马上就发布 <code>ClientDealProposal</code> 消息,会等待一定的时间, 由配置文件中的 <code>PublishMsgPeriod</code> 项来控制，在测试时可以将此项设置为较小值减少等待时间。下面的设置，将等待时间设置为10秒。</p> <div class="language-yuml extra-class"><pre class="language-text"><code>PublishMsgPeriod = &quot;10s&quot;
+</code></pre></div><h4 id="piecestorage-配置"><a href="#piecestorage-配置" class="header-anchor">#</a> <code>PieceStorage</code> 配置</h4> <p>目前 <code>venus-market</code> 支持两种 <code>Piece</code> 数据的存储模式：</p> <ul><li>文件系统</li> <li>对象存储</li></ul> <div class="language-yuml extra-class"><pre class="language-text"><code>[PieceStorage]
+  [[PieceStorage.Fs]]
+    Name = &quot;local&quot;
+    Enable = true
+    Path = &quot;/mnt/pieces&quot;
+  [[PieceStorage.S3]]
+    Name = &quot;oss&quot;
+    Enable = false
+    EndPoint = &quot;&quot;
+    AccessKey = &quot;&quot;
+    SecretKey = &quot;&quot;
+    Token = &quot;&quot;
+</code></pre></div><p>也可以通过命令配置：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 本地文件系统存储</span>
+./venus-market piece-storage add-fs --path<span class="token operator">=</span><span class="token string">&quot;/piece/storage/path&quot;</span> --name<span class="token operator">=</span><span class="token string">&quot;local&quot;</span>
+
+<span class="token comment"># 对象存储</span>
+./venus-market piece-storage add-s3 --endpoint<span class="token operator">=</span><span class="token operator">&lt;</span>url<span class="token operator">&gt;</span> --name<span class="token operator">=</span><span class="token string">&quot;oss&quot;</span>
+</code></pre></div><h4 id="miners-配置"><a href="#miners-配置" class="header-anchor">#</a> <code>Miners</code> 配置</h4> <p><code>venus-market</code> 服务的矿工及每个矿工的参数，配置如下：</p> <div class="language- extra-class"><pre class="language-text"><code>[[Miners]]
+  Addr = &quot;f01000&quot;
+  Account = &quot;testuser01&quot;
+  
+  ConsiderOnlineStorageDeals = true
+  ConsiderOfflineStorageDeals = true
+  ConsiderOnlineRetrievalDeals = true
+  ConsiderOfflineRetrievalDeals = true
+  ConsiderVerifiedStorageDeals = true
+  ConsiderUnverifiedStorageDeals = true
+  PieceCidBlocklist = []
+  ExpectedSealDuration = &quot;24h0m0s&quot;
+  MaxDealStartDelay = &quot;336h0m0s&quot;
+  PublishMsgPeriod = &quot;1h0m0s&quot;
+  MaxDealsPerPublishMsg = 8
+  MaxProviderCollateralMultiplier = 2
+  Filter = &quot;&quot;
+  RetrievalFilter = &quot;&quot;
+  TransferPath = &quot;&quot;
+  MaxPublishDealsFee = &quot;0 FIL&quot;
+  MaxMarketBalanceAddFee = &quot;0 FIL&quot;
+  [CommonProviderConfig.RetrievalPricing]
+    Strategy = &quot;default&quot;
+    [CommonProviderConfig.RetrievalPricing.Default]
+      VerifiedDealsFreeTransfer = true
+    [CommonProviderConfig.RetrievalPricing.External]
+      Path = &quot;&quot;
+    [CommonProviderConfig.AddressConfig]
+      DisableWorkerFallback = false
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">提示</p> <p>如果有多个矿工，将上述配置拷贝一份即可。<em><strong>如果矿工比较多，那配置文件会很长，考虑优化？</strong></em></p></div> <h2 id="venus-market代理libp2p监听"><a href="#venus-market代理libp2p监听" class="header-anchor">#</a> venus-market代理libp2p监听</h2> <p>将 <code>venus-market</code> 设置为 <code>miner</code> 的 <code>libp2p</code> 监听代理就是将特定 <code>miner</code> 的市场服务的入口设置为当前运行的 <code>venus-market</code> 实例。</p> <ul><li>查询 <code>venus-market</code> 的对等节点监听地址</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market net listen
+
+/ip4/127.0.0.1/tcp/58418/p2p/12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+/ip4/192.168.19.67/tcp/58418/p2p/12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+/ip6/::1/tcp/49770/p2p/12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+</code></pre></div><ul><li>将 <code>miners</code> 的 <code>Mutiaddrs</code> 和 <code>peerid</code> 设置为 <code>venus-market</code> 的 <code>Mutiaddrs</code> 和 <code>peerid</code></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market actor set-addrs --miner<span class="token operator">=</span>t01041 /ip4/192.168.19.67/tcp/58418
+Requested multiaddrs change <span class="token keyword">in</span> message bafy2bzaceceqgxmiledunzjwbajpghzzn4iibvxhoifsrz4q2grzsirgznzdg
+
+./venus-market actor set-peer-id --miner<span class="token operator">=</span>f01041 12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+  Requested peerid change <span class="token keyword">in</span> message bafy2bzacea4ruzf4hvyezzhjkt6hnzz5tpk7ttuw6jmyoadqasqtujypqitp2
+</code></pre></div><ul><li>等待消息上链后，查看 <code>miner</code> 的代理信息</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market actor info --miner t01041
+peers: 12D3KooWQftXTGFBKooKuyaNkugapUzi4VmjxEKTgkpsNCQufKBK
+addr: /ip4/192.168.19.67/tcp/58418
+</code></pre></div><h2 id="挂单"><a href="#挂单" class="header-anchor">#</a> 挂单</h2> <h3 id="存储挂单"><a href="#存储挂单" class="header-anchor">#</a> 存储挂单</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market storage ask <span class="token builtin class-name">set</span> --price<span class="token operator">=</span><span class="token number">0</span>.01fil --verified-price<span class="token operator">=</span><span class="token number">0</span>.02fil --min-piece-size<span class="token operator">=</span>512b --max-piece-size<span class="token operator">=</span>512M t01041
+</code></pre></div><p>可以通过命令行工具检查定价信息：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>./venus-market storage ask get t01041
+Price per GiB/Epoch  Verified  Min. Piece Size <span class="token punctuation">(</span>padded<span class="token punctuation">)</span>  Max. Piece Size <span class="token punctuation">(</span>padded<span class="token punctuation">)</span>  Expiry <span class="token punctuation">(</span>Epoch<span class="token punctuation">)</span>  Expiry <span class="token punctuation">(</span>Appx. Rem. Time<span class="token punctuation">)</span>  Seq. No.
+<span class="token number">0.01</span> FIL             <span class="token number">0.02</span> FIL  <span class="token number">512</span> B                     <span class="token number">521</span> MiB                     <span class="token number">161256</span>          719h59m0s                 <span class="token number">0</span>
+</code></pre></div><h3 id="检索挂单"><a href="#检索挂单" class="header-anchor">#</a> 检索挂单</h3> <p>存储服务提供商至少应设置收款地址</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market retrieve ask <span class="token builtin class-name">set</span> t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
+</code></pre></div><p>同时，也可以设置数据检索订单的价格，不设置时，默认为0.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market retrieve ask <span class="token builtin class-name">set</span> <span class="token punctuation">\</span>
+--price <span class="token number">0</span>.02fil <span class="token punctuation">\</span>
+--unseal-price <span class="token number">0</span>.01fil <span class="token punctuation">\</span>
+--payment-interval 1MB <span class="token punctuation">\</span>
+t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
+</code></pre></div><h2 id="配置启动market-client"><a href="#配置启动market-client" class="header-anchor">#</a> 配置启动market-client</h2> <p><code>market-client</code> 正常运行需要同步节点、签名节点（<code>venus fullnode</code> 和 <code>lotus fullnode</code> 可以作为签名节点）、消息节点（<code>venus fullnode</code> 和 <code>lotus fullnode</code> 可以作为消息节点）及 <code>venus-market</code>，故其可以灵活配置，只要保证消息能够正常签名并上链即可。</p> <p><code>market-client</code> 需要配置 <code>--addr</code> 用来绑定客户的钱包地址，用于支付客户端抵押和检索费用。</p> <p>这里介绍常用的三种启动方式：</p> <ul><li>接入 <code>Venus</code> 链服务</li></ul> <p><code>venus-gateway</code> 的签名 <code>API</code> 只有 <code>admin</code> 权限才能访问（安全考虑），也就是只有链服务组件才能访问，故 <code>market-client</code> 无法使用，所以用本地的 <code>venus-wallet</code> 进行签名。</p> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client run <span class="token punctuation">\</span>
+--node-url<span class="token operator">=</span>/ip4/<span class="token operator">&lt;</span>venus_ip<span class="token operator">&gt;</span>/tcp/<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">\</span> 
+--messager-url<span class="token operator">=</span>/ip4/<span class="token operator">&lt;</span>venus-messager_ip<span class="token operator">&gt;</span>/tcp/<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+--auth-token<span class="token operator">=</span><span class="token operator">&lt;</span>user-signed-token<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+--signer-type<span class="token operator">=</span>wallet <span class="token punctuation">\</span>
+--signer-url<span class="token operator">=</span>/ip4/<span class="token operator">&lt;</span>venus-wallet_ip<span class="token operator">&gt;</span>/tcp/<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+--signer-toke<span class="token operator">=</span><span class="token operator">&lt;</span>wallet-token<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+--addr<span class="token operator">=</span><span class="token operator">&lt;</span>signer address<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+</code></pre></div><blockquote><p><code>venus-wallet</code> 生成具有签名权限的 <code>token</code> 请参考上文.</p></blockquote> <ul><li>连接 <code>lotus fullnode</code> 启动</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client run <span class="token punctuation">\</span>
+--node-url<span class="token operator">=</span>/ip4/<span class="token operator">&lt;</span>venus_ip<span class="token operator">&gt;</span>/tcp/<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">\</span> 
+--node-token<span class="token operator">=</span><span class="token operator">&lt;</span>node-token<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+--signer-type<span class="token operator">=</span>lotusnode <span class="token punctuation">\</span>
+--addr<span class="token operator">=</span><span class="token operator">&lt;</span>signer address<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+</code></pre></div><ul><li>连接 <code>venus fullnode</code> 启动</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client run <span class="token punctuation">\</span>
+--node-url<span class="token operator">=</span>/ip4/<span class="token operator">&lt;</span>venus_ip<span class="token operator">&gt;</span>/tcp/<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">\</span> 
+--node-token<span class="token operator">=</span><span class="token operator">&lt;</span>node-token<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+--signer-type<span class="token operator">=</span>wallet <span class="token punctuation">\</span>
+--addr<span class="token operator">=</span><span class="token operator">&lt;</span>signer address<span class="token operator">&gt;</span> <span class="token punctuation">\</span>
+</code></pre></div><p>这些配置项也可以在配置文件中设置，参见<a href="/zh/operation/market-client配置解释.html">market-client配置</a></p> <h2 id="存储订单"><a href="#存储订单" class="header-anchor">#</a> 存储订单</h2> <h3 id="导入待存储的数据"><a href="#导入待存储的数据" class="header-anchor">#</a> 导入待存储的数据</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client data <span class="token function">import</span> <span class="token operator">&lt;</span>file path<span class="token operator">&gt;</span>
+Import <span class="token number">1642491708527303001</span>, Root bafk2bzacedgv2xqys5ja4gycqipmg543ekxz3tjj6wwfexda352n55ahjldja
+</code></pre></div><h3 id="选择挂单"><a href="#选择挂单" class="header-anchor">#</a> 选择挂单</h3> <p>使用 <code>market-client</code> 来查询 <code>miner</code> 挂单信息：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./market-client storage asks query f01041 
+Ask: t01041
+Price per GiB: <span class="token number">0.02</span> FIL
+Verified Price per GiB: <span class="token number">0.01</span> FIL
+Max Piece size: <span class="token number">8</span> MiB
+Min Piece size: <span class="token number">512</span> B
+</code></pre></div><h3 id="发起存储订单"><a href="#发起存储订单" class="header-anchor">#</a> 发起存储订单</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>/market-client storage deals init
+<span class="token comment"># 输入需要存储的数据的cid, `./market-client data local`命令查看</span>
+Data CID <span class="token punctuation">(</span>from lotus client <span class="token function">import</span><span class="token punctuation">)</span>: bafk2bzacedgv2xqys5ja4gycqipmg543ekxz3tjj6wwfexda352n55ahjldja
+<span class="token punctuation">..</span> calculating data size
+PieceCid:  baga6ea4seaqpz47j4kqdiixpehmzk3uw5c4cmqvs5iyi7xf7rwkepfhdvowdiai  PayLoadSize: <span class="token number">809</span> PieceSize: <span class="token number">1024</span>
+<span class="token comment"># 输入数据存储周期</span>
+Deal duration <span class="token punctuation">(</span>days<span class="token punctuation">)</span>: <span class="token number">180</span>
+Miner Addresses <span class="token punctuation">(</span>f0<span class="token punctuation">..</span> f0<span class="token punctuation">..</span><span class="token punctuation">)</span>, none to find: t01041
+<span class="token punctuation">..</span> querying miner asks
+-----
+Proposing from t16qnfduxzpneb2m3rbdasvhgk7rmmo32zpiypkaq
+	Balance: <span class="token number">9499.999999856612207905</span> FIL
+Piece size: 1KiB <span class="token punctuation">(</span>Payload size: 809B<span class="token punctuation">)</span>
+Duration: 4320h0m0s
+Total price: ~0.0098876953124352 FIL <span class="token punctuation">(</span><span class="token number">0.000000019073486328</span> FIL per epoch<span class="token punctuation">)</span>
+Verified: <span class="token boolean">false</span>
+<span class="token comment"># 确认是否接受订单价格</span>
+Accept <span class="token punctuation">(</span>yes/no<span class="token punctuation">)</span>: <span class="token function">yes</span>
+<span class="token punctuation">..</span> executing
+Deal <span class="token punctuation">(</span>t01051<span class="token punctuation">)</span> CID: bafyreihiln2ha6eaaos7kuhwpnvjvjlxmjnpsklym6hhucu2z776bf2or4
+</code></pre></div><p>然后等待订单消息上链，以及存储提供商完成数据封装即可。</p> <p><code>market-client</code> 查看订单:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client storage deals list
+DealCid      DealId  Provider  State                          On Chain?  Slashed?  PieceCID     Size    Price                    Duration  Verified
+<span class="token punctuation">..</span>.76bf2or4  <span class="token number">0</span>       t01051    StorageDealCheckForAcceptance  N          N         <span class="token punctuation">..</span>.dvowdiai  <span class="token number">1016</span> B  <span class="token number">0.00992212295525724</span> FIL  <span class="token number">520205</span>    <span class="token boolean">false</span>
+  Message: Provider state: StorageDealPublish
+</code></pre></div><h3 id="线下存储订单"><a href="#线下存储订单" class="header-anchor">#</a> 线下存储订单</h3> <ol><li>导入订单存储文件</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>./market-client data <span class="token function">import</span> ./README.md
+Import <span class="token number">1642643014364955003</span>, Root bafk2bzaceaf4sallirkt63fqrojz5gaut7akiwxrclcsymqelqad7man3hc2c
+</code></pre></div><p>2.转为CAR文件</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./market-client data generate-car ./README.md ./readme.md.car
+</code></pre></div><p>3.计算CAR文件的<code>CID</code>和<code>Piece size</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client data commP ./readme.md.car
+CID:  baga6ea4seaqfewgysi3n3cjylkbfknr56vbemb2gwjfvpctqtjgpdweu7o3d6mq
+Piece size:  <span class="token number">3.969</span> KiB
+</code></pre></div><p>4.发起订单</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./market-client storage deals init <span class="token punctuation">\</span>
+--manual-piece-cid<span class="token operator">=</span>baga6ea4seaqfewgysi3n3cjylkbfknr56vbemb2gwjfvpctqtjgpdweu7o3d6mq <span class="token punctuation">\</span>
+--manual-piece-size<span class="token operator">=</span><span class="token number">4064</span> <span class="token punctuation">\</span>
+bafk2bzaceaf4sallirkt63fqrojz5gaut7akiwxrclcsymqelqad7man3hc2c <span class="token punctuation">\</span>
+f01051 <span class="token punctuation">\</span>
+<span class="token number">0</span>.01fil <span class="token punctuation">\</span>
+<span class="token number">518400</span>
+bafyreiecguaxgtmgcanfco6huni4d6h6zs3w3bznermmiurtdos7r6hftm
+</code></pre></div><ul><li><code>manual-piece-cid</code>: 在第3步计执行<code>data commP</code>后输出的<code>CID</code></li> <li><code>manual-piece-size</code>: 在第3步执行<code>data commP</code>后输出的<code>Piece size</code>.需要注意的是, 在使用这个参数时, 这个值需要转换成<code>byte</code>的大小, 在这里为3.969kib转换成byte的大小是4064.
+之后4个参数分别是:</li> <li>第一步执行<code>import</code>命令后输入的<code>Root</code></li> <li>矿工ID</li> <li>协商支付订单的费用<code>0.01fil</code>, **这个值必须大于旷工设置的<code>storage ask</code>中的最小值, 不然订单会被拒绝掉.</li> <li>合约周期, 必须大于等于180天, 这个值也需要换成epoch为单位, 每个epoch=30秒, 示例中:518400 = 180天.</li></ul> <p>最后的输出<code>bafyreidfs2w7lxacq6zpqck7q4zimyitidxyahojf7dbbuz5zr7irdlmqa</code>为propose的cid.
+线上订单一样, 此时可以通过market-client查看deal信息, 订单的最后状态会停止在<code>StorageDealWaitingForData</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client storage deals list
+DealCid      DealId  Provider  State                          On Chain?        Slashed?  PieceCID     Size       Price                    Duration  Verified  
+<span class="token punctuation">..</span>.s7r6hftm  <span class="token number">0</span>       t01051    StorageDealCheckForAcceptance  N                N         <span class="token punctuation">..</span>.u7o3d6mq  <span class="token number">3.969</span> KiB  <span class="token number">5196.63</span> FIL              <span class="token number">519663</span>    <span class="token boolean">false</span>     
+  Message: Provider state: StorageDealWaitingForData
+</code></pre></div><p>💁 <strong>如果 <code>market-client</code> 出现下面的内容:</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token number">2022</span>-01-20T12:47:27.966+0800	ERROR	storagemarket_impl	clientstates/client_states.go:324	deal bafyreif2k2e4acraxk33z3llwo5gqmk32tfrdj2kocjanojbfbf6vj72vm failed: adding market funds failed: estimating gas used: message execution failed: <span class="token builtin class-name">exit</span> SysErrInsufficientFunds<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+</code></pre></div><p>说明钱包余额不足,调用命令 <code>./market-client actor-funds add 100fil</code> 充值后重新执行命令.</p> <ol start="5"><li>导入离线订单的数据文件
+需要将之前第2步生成的<code>.car</code>文件线下传输到venus-market, 并通过venus-market命令导入数据:</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>./venus-market storage-deals import-data bafyreiecguaxgtmgcanfco6huni4d6h6zs3w3bznermmiurtdos7r6hftm ./readme.md.car
+</code></pre></div><p>再次查看状态, 订单状态更新为<code>StorageDealPublishing</code>:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client storage deals list
+DealCid      DealId  Provider  State                          On Chain?        Slashed?  PieceCID     Size       Price                    Duration  Verified  
+<span class="token punctuation">..</span>.s7r6hftm  <span class="token number">0</span>       t01051    StorageDealCheckForAcceptance  N                N         <span class="token punctuation">..</span>.u7o3d6mq  <span class="token number">3.969</span> KiB  <span class="token number">5196.63</span> FIL              <span class="token number">519663</span>    <span class="token boolean">false</span>     
+Message: Provider state: StorageDealPublishing
+</code></pre></div><p>最后等待订单状态变化为<code>StorageDealAwaitingPreCommit</code> 就可以进行订单数据的封装了。</p> <h2 id="提交数据检索订单"><a href="#提交数据检索订单" class="header-anchor">#</a> 提交数据检索订单</h2> <p>用户通过 <code>minerID</code> 和 <code>Data CID</code> 就可以发起数据检索订单</p> <div class="language-shell extra-class"><pre class="language-shell"><code>./market-client retrieval retrieve --provider t01020 bafk2bzacearla6en6crpouxo72d5lhr3buajbzjippl63bfsd2m7rsyughu42 test.txt
+Recv <span class="token number">0</span> B, Paid <span class="token number">0</span> FIL, Open <span class="token punctuation">(</span>New<span class="token punctuation">)</span>, 0s
+Recv <span class="token number">0</span> B, Paid <span class="token number">0</span> FIL, DealProposed <span class="token punctuation">(</span>WaitForAcceptance<span class="token punctuation">)</span>, 16ms
+Recv <span class="token number">0</span> B, Paid <span class="token number">0</span> FIL, DealAccepted <span class="token punctuation">(</span>Accepted<span class="token punctuation">)</span>, 26ms
+Recv <span class="token number">0</span> B, Paid <span class="token number">0</span> FIL, PaymentChannelSkip <span class="token punctuation">(</span>Ongoing<span class="token punctuation">)</span>, 27ms
+Recv <span class="token number">1.479</span> KiB, Paid <span class="token number">0</span> FIL, BlocksReceived <span class="token punctuation">(</span>Ongoing<span class="token punctuation">)</span>, 30ms
+Recv <span class="token number">1.479</span> KiB, Paid <span class="token number">0</span> FIL, AllBlocksReceived <span class="token punctuation">(</span>BlocksComplete<span class="token punctuation">)</span>, 33ms
+Recv <span class="token number">1.479</span> KiB, Paid <span class="token number">0</span> FIL, Complete <span class="token punctuation">(</span>CheckComplete<span class="token punctuation">)</span>, 35ms
+Recv <span class="token number">1.479</span> KiB, Paid <span class="token number">0</span> FIL, CompleteVerified <span class="token punctuation">(</span>FinalizingBlockstore<span class="token punctuation">)</span>, 36ms
+Recv <span class="token number">1.479</span> KiB, Paid <span class="token number">0</span> FIL, BlockstoreFinalized <span class="token punctuation">(</span>Completed<span class="token punctuation">)</span>, 36ms
+Success
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ipfs-force-community/damocles-docs/edit/main/docs/zh/operation/README.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2023/6/5 07:11:55</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/zh/operation/market-client-config.html">
+        market-client配置
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3b2f200c.js" defer></script><script src="/assets/js/2.80641b54.js" defer></script><script src="/assets/js/27.ed4e5bbd.js" defer></script>
+  </body>
+</html>

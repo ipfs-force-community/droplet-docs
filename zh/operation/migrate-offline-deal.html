@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>如何迁移离线订单 | 水滴</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/assets/droplet-icon.png">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-GRVZ8072DQ"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GRVZ8072DQ');</script>
+    <meta name="description" content="水滴，原Venus订单服务，是一个Filecoin存储订单解决方案">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e9c2d8a.css" as="style"><link rel="preload" href="/assets/js/app.3b2f200c.js" as="script"><link rel="preload" href="/assets/js/2.80641b54.js" as="script"><link rel="preload" href="/assets/js/33.640d7032.js" as="script"><link rel="prefetch" href="/assets/js/10.f067a250.js"><link rel="prefetch" href="/assets/js/11.2a60a7f2.js"><link rel="prefetch" href="/assets/js/12.27a7dfea.js"><link rel="prefetch" href="/assets/js/13.647f3f5f.js"><link rel="prefetch" href="/assets/js/14.092a8cc9.js"><link rel="prefetch" href="/assets/js/15.ca4ddf49.js"><link rel="prefetch" href="/assets/js/16.94573f36.js"><link rel="prefetch" href="/assets/js/17.fc2c1aac.js"><link rel="prefetch" href="/assets/js/18.9d946796.js"><link rel="prefetch" href="/assets/js/19.7051420e.js"><link rel="prefetch" href="/assets/js/20.5deb1620.js"><link rel="prefetch" href="/assets/js/21.0291b2d4.js"><link rel="prefetch" href="/assets/js/22.5781ecad.js"><link rel="prefetch" href="/assets/js/23.ce31993f.js"><link rel="prefetch" href="/assets/js/24.b6b7b90d.js"><link rel="prefetch" href="/assets/js/25.bf37cf30.js"><link rel="prefetch" href="/assets/js/26.62457e14.js"><link rel="prefetch" href="/assets/js/27.ed4e5bbd.js"><link rel="prefetch" href="/assets/js/28.e1445620.js"><link rel="prefetch" href="/assets/js/29.93097c20.js"><link rel="prefetch" href="/assets/js/3.bd29e568.js"><link rel="prefetch" href="/assets/js/30.ee922e83.js"><link rel="prefetch" href="/assets/js/31.42b5ca68.js"><link rel="prefetch" href="/assets/js/32.fc8a53da.js"><link rel="prefetch" href="/assets/js/34.f16373e6.js"><link rel="prefetch" href="/assets/js/35.11244917.js"><link rel="prefetch" href="/assets/js/4.06777882.js"><link rel="prefetch" href="/assets/js/5.d51f6b5b.js"><link rel="prefetch" href="/assets/js/6.93b48b5a.js"><link rel="prefetch" href="/assets/js/7.48216839.js"><link rel="prefetch" href="/assets/js/8.15913162.js"><link rel="prefetch" href="/assets/js/9.41619f00.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e9c2d8a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><img src="/assets/droplet-icon.png" alt="水滴" class="logo"> <span class="site-name can-hide">水滴</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/intro/" class="nav-link">
+  功能介绍
+</a></div><div class="nav-item"><a href="/zh/operation/" class="nav-link router-link-active">
+  部署/运维
+</a></div><div class="nav-item"><a href="/zh/developer/" class="nav-link">
+  研发/设计
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/operation/migrate-offline-deal.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/zh/intro/" class="nav-link">
+  功能介绍
+</a></div><div class="nav-item"><a href="/zh/operation/" class="nav-link router-link-active">
+  部署/运维
+</a></div><div class="nav-item"><a href="/zh/developer/" class="nav-link">
+  研发/设计
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/operation/migrate-offline-deal.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/operation/" aria-current="page" class="sidebar-link">快速启用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/operation/market-client-config.html" class="sidebar-link">market-client配置</a></li><li><a href="/zh/operation/market-config.html" class="sidebar-link">venus-market配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>运维</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/operation/prep-datasets.html" class="sidebar-link">大数据集准备</a></li><li><a href="/zh/operation/migrate-offline-deal.html" aria-current="page" class="active sidebar-link">迁移离线订单</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/operation/migrate-offline-deal.html#前置条件" class="sidebar-link">前置条件</a></li><li class="sidebar-sub-header"><a href="/zh/operation/migrate-offline-deal.html#从lotus-miner导出离线订单" class="sidebar-link">从lotus-miner导出离线订单</a></li><li class="sidebar-sub-header"><a href="/zh/operation/migrate-offline-deal.html#将离线订单导入到venus-market" class="sidebar-link">将离线订单导入到venus-market</a></li></ul></li><li><a href="/zh/operation/extend-claim.html" class="sidebar-link">DC订单过续期</a></li><li><a href="/zh/operation/deal-filter.html" class="sidebar-link">订单过滤器</a></li><li><a href="/zh/operation/metrics.html" class="sidebar-link">Metrics 指标</a></li><li><a href="/zh/operation/rebuild-signature.html" class="sidebar-link">Metrics 指标</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="如何迁移离线订单"><a href="#如何迁移离线订单" class="header-anchor">#</a> 如何迁移离线订单</h1> <p>从<code>lotus</code> 迁移到<code>venus</code>的时候，需要迁移已完成封装证明的订单和还没开始进行封装的离线订单。
+本文档主要介绍该过程中离线订单的迁移。</p> <h2 id="前置条件"><a href="#前置条件" class="header-anchor">#</a> 前置条件</h2> <p>要完成离线订单的迁移，需要满足以下两个条件：</p> <ul><li>已经拥有一套带有<code>market</code>组件的<code>venus</code>链服务</li> <li>已经将矿工账号迁入<code>venus</code>链服务</li></ul> <h2 id="从lotus-miner导出离线订单"><a href="#从lotus-miner导出离线订单" class="header-anchor">#</a> 从<code>lotus-miner</code>导出离线订单</h2> <p>迄至2022年7月，<code>lotus-miner</code>尚未提供直接导出订单详细信息的命令行工具，所以订单的导出需要用户直接访问<code>lotus-miner</code>的rpc服务接口来完成。
+可参考以下使用curl导出lotus-miner的离线订单的示例：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> http://127.0.0.1:2345/rpc/v0 -X POST <span class="token punctuation">\</span>
+-H <span class="token string">&quot;Content-Type: application/json&quot;</span> <span class="token punctuation">\</span>
+-H <span class="token string">&quot;Authorization: Bearer &lt;YOUR-TOKEN&gt;&quot;</span> <span class="token punctuation">\</span>
+-d <span class="token string">'{&quot;method&quot;: &quot;Filecoin.MarketListIncompleteDeals&quot;,&quot;params&quot;:[], &quot;id&quot;: 0}'</span>
+</code></pre></div><p>执行完命令后，你可能得到如下结果：</p> <div class="language- extra-class"><pre class="language-text"><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:[{&quot;Proposal&quot;:{&quot;PieceCID&quot;:{&quot;/&quot;:&quot;baga6ea4seaqcrddjqzqavqipgljq6jn3bmbnhzw5yucdmoqoji3tni6kisjqini&quot;},&quot;PieceSize&quot;:128,&quot;VerifiedDeal&quot;:false,&quot;Client&quot;:&quot;t3r3nyp4sitvilwc5wggvrsyoqmue3zgliqsqzqxri5up2fmlx2e5xeltxv4qbokjj6qrdgz3t7zdwygogpjaa&quot;,&quot;Provider&quot;:&quot;t01000&quot;,&quot;Label&quot;:&quot;uAVUAHOi_meaYr-eUqOadpea1i-ivleeahOaVsOaNrgo&quot;,&quot;StartEpoch&quot;:173482,&quot;EndEpoch&quot;:694737,&quot;StoragePricePerEpoch&quot;:&quot;0&quot;,
+......
+&quot;:&quot;bafkqahhix6m6ngfp46kkrzu5uxtllc7iv6k6pgue42k3bzunvyfa&quot;},&quot;PieceCid&quot;:{&quot;/&quot;:&quot;baga6ea4seaqcrddjqzqavqipgljq6jn3bmbnhzw5yucdmoqoji3tni6kisjqini&quot;},&quot;PieceSize&quot;:127,&quot;RawBlockSize&quot;:0},&quot;AvailableForRetrieval&quot;:false,&quot;DealID&quot;:0,&quot;CreationTime&quot;:&quot;2022-08-03T10:35:09.774748628+08:00&quot;,&quot;TransferChannelId&quot;:null,&quot;SectorNumber&quot;:0,&quot;InboundCAR&quot;:&quot;&quot;}],&quot;id&quot;:0}
+</code></pre></div><p>其中，<code>result</code>中的每一项都是一个订单的详细信息。每个订单中的<code>State</code>字段表征了当前订单的状态，如果<code>State</code>=18，表示当前订单处于<code>StorageDealWaitingForData</code>的状态，也就是离线订单暂时停留的一个状态，可以手动地将离线订单抽离出来，也可以将所有的订单都保留直接通过<code>venus-market</code>导入，它会排除掉非离线订单。<br>
+将要导入的订单信息保存到一个json文件中，就算是完成了离线订单导出。</p> <h2 id="将离线订单导入到venus-market"><a href="#将离线订单导入到venus-market" class="header-anchor">#</a> 将离线订单导入到<code>venus-market</code></h2> <p>开始导入离线订单之前，先确认矿工账号是否在<code>venus</code>链服务中，如果不在，需要将矿工账号迁入<code>venus</code>链服务。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market actor list
+</code></pre></div><p>确定完矿工之后，在<code>venus-market</code>中可以直接通过命令导入离线订单：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>./venus-market storage-deals import-offlinedeal <span class="token operator">&lt;</span>DEALS-FILE<span class="token operator">&gt;</span> 
+</code></pre></div><p>可以得到类似以下的结果：</p> <div class="language- extra-class"><pre><code>$ ./venus-market storage-deals import-offlinedeal offline-deals.json
+import 4 deals, 1 deal success , 3 deal fail .
+</code></pre></div><p>加上<code>--verbose</code>（<code>-v</code>）标志，可以获取更加详细的执行信息：</p> <div class="language- extra-class"><pre><code>$./venus-market storage-deals import-offlinedeal --verbose &lt;DEAL-FILE&gt; 
+( 1 / 4 ) bafyreieb5uzq26rrvpp6cue34tuyz6xfrdgydxsul3u2fyez7wrnohoaye : fail : deal state StorageDealError not match StorageDealWaitingForData
+( 2 / 4 ) bafyreiergjl22fk5kfvxd3yopby62veeejhesuxzbmhsnoo7tp3mam6zzu : success
+( 3 / 4 ) bafyreig75z2tw2wz5qpign2r4773wugl6gf5fezo32dvucqnz3ftfajilu : fail : deal state StorageDealError not match StorageDealWaitingForData
+( 4 / 4 ) bafyreihdbazwk2zahpmpdhykyqrax6m5rkz472gvhfixfg5hse5ao4s6gq : fail : deal state StorageDealError not match StorageDealWaitingForData
+import 4 deals, 1 deal success , 3 deal fail .
+</code></pre></div><p>至此，就已经完成了离线订单的导入。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ipfs-force-community/damocles-docs/edit/main/docs/zh/operation/migrate-offline-deal.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/zh/operation/prep-datasets.html" class="prev">
+        大数据集准备
+      </a></span> <span class="next"><a href="/zh/operation/extend-claim.html">
+        DC订单过续期
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3b2f200c.js" defer></script><script src="/assets/js/2.80641b54.js" defer></script><script src="/assets/js/33.640d7032.js" defer></script>
+  </body>
+</html>

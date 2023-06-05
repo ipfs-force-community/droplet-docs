@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>水滴</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/assets/droplet-icon.png">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-GRVZ8072DQ"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GRVZ8072DQ');</script>
+    <meta name="description" content="水滴，原Venus订单服务，是一个Filecoin存储订单解决方案">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e9c2d8a.css" as="style"><link rel="preload" href="/assets/js/app.3b2f200c.js" as="script"><link rel="preload" href="/assets/js/2.80641b54.js" as="script"><link rel="preload" href="/assets/js/23.ce31993f.js" as="script"><link rel="prefetch" href="/assets/js/10.f067a250.js"><link rel="prefetch" href="/assets/js/11.2a60a7f2.js"><link rel="prefetch" href="/assets/js/12.27a7dfea.js"><link rel="prefetch" href="/assets/js/13.647f3f5f.js"><link rel="prefetch" href="/assets/js/14.092a8cc9.js"><link rel="prefetch" href="/assets/js/15.ca4ddf49.js"><link rel="prefetch" href="/assets/js/16.94573f36.js"><link rel="prefetch" href="/assets/js/17.fc2c1aac.js"><link rel="prefetch" href="/assets/js/18.9d946796.js"><link rel="prefetch" href="/assets/js/19.7051420e.js"><link rel="prefetch" href="/assets/js/20.5deb1620.js"><link rel="prefetch" href="/assets/js/21.0291b2d4.js"><link rel="prefetch" href="/assets/js/22.5781ecad.js"><link rel="prefetch" href="/assets/js/24.b6b7b90d.js"><link rel="prefetch" href="/assets/js/25.bf37cf30.js"><link rel="prefetch" href="/assets/js/26.62457e14.js"><link rel="prefetch" href="/assets/js/27.ed4e5bbd.js"><link rel="prefetch" href="/assets/js/28.e1445620.js"><link rel="prefetch" href="/assets/js/29.93097c20.js"><link rel="prefetch" href="/assets/js/3.bd29e568.js"><link rel="prefetch" href="/assets/js/30.ee922e83.js"><link rel="prefetch" href="/assets/js/31.42b5ca68.js"><link rel="prefetch" href="/assets/js/32.fc8a53da.js"><link rel="prefetch" href="/assets/js/33.640d7032.js"><link rel="prefetch" href="/assets/js/34.f16373e6.js"><link rel="prefetch" href="/assets/js/35.11244917.js"><link rel="prefetch" href="/assets/js/4.06777882.js"><link rel="prefetch" href="/assets/js/5.d51f6b5b.js"><link rel="prefetch" href="/assets/js/6.93b48b5a.js"><link rel="prefetch" href="/assets/js/7.48216839.js"><link rel="prefetch" href="/assets/js/8.15913162.js"><link rel="prefetch" href="/assets/js/9.41619f00.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e9c2d8a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><img src="/assets/droplet-icon.png" alt="水滴" class="logo"> <span class="site-name can-hide">水滴</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/intro/" class="nav-link">
+  功能介绍
+</a></div><div class="nav-item"><a href="/zh/operation/" class="nav-link">
+  部署/运维
+</a></div><div class="nav-item"><a href="/zh/developer/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  研发/设计
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/developer/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/zh/intro/" class="nav-link">
+  功能介绍
+</a></div><div class="nav-item"><a href="/zh/operation/" class="nav-link">
+  部署/运维
+</a></div><div class="nav-item"><a href="/zh/developer/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  研发/设计
+</a></div><div class="nav-item"><a href="/zh/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/developer/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>功能设计</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/developer/" aria-current="page" class="active sidebar-link">多节点配置文件支持</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/developer/#simple-summary-概述" class="sidebar-link">Simple Summary (概述)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#abstract-功能简介" class="sidebar-link">Abstract (功能简介)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#motivation-来源-背景" class="sidebar-link">Motivation (来源/背景)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#specification-feature-spec" class="sidebar-link">Specification (feature Spec)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#design-rationale-设计思路" class="sidebar-link">Design Rationale (设计思路)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#backwards-compatibility-兼容性" class="sidebar-link">Backwards Compatibility（兼容性）</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#test-cases-测试用例" class="sidebar-link">Test Cases (测试用例)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#security-considerations-安全考量" class="sidebar-link">Security Considerations (安全考量)</a></li><li class="sidebar-sub-header"><a href="/zh/developer/#implementation-实施" class="sidebar-link">Implementation（实施）</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>探索/调研</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/developer/understand-boost.html" class="sidebar-link">Boost 调研</a></li><li><a href="/zh/developer/boost-mk-1-2.html" class="sidebar-link">Boost 协议集成</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="市场属性配置"><a href="#市场属性配置" class="header-anchor">#</a> 市场属性配置</h1> <h2 id="simple-summary-概述"><a href="#simple-summary-概述" class="header-anchor">#</a> Simple Summary (概述)</h2> <p>矿工可以自己配置存储市场和检索市场的属性。</p> <h2 id="abstract-功能简介"><a href="#abstract-功能简介" class="header-anchor">#</a> Abstract (功能简介)</h2> <p><code>venus-market</code> 支持矿工的市场交易属性可独立配置，并可以由矿工自己配置，而不是通过链服务维护人员间接进行。</p> <p>关联：</p> <ul><li>[ ] 提案的<a href="https://github.com/filecoin-project/venus/issues/5410" target="_blank" rel="noopener noreferrer">issue<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>[ ] <a href="https://github.com/filecoin-project/venus/discussions/5425" target="_blank" rel="noopener noreferrer">社区discussion<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="motivation-来源-背景"><a href="#motivation-来源-背景" class="header-anchor">#</a> Motivation (来源/背景)</h2> <p><code>Filecoin</code> 网络中的矿工参与市场交易需要一些属性来保证交易过程正常进行，也可以通过一些属性来设置自己的交易取向，如：仅接受可验证订单、只进行离线订单等。可配置属性如下：</p> <div class="language-toml extra-class"><pre class="language-toml"><code><span class="token comment"># Default config:</span>
+<span class="token key property">ConsiderOnlineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">ConsiderOfflineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">ConsiderOnlineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">ConsiderOfflineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">ConsiderVerifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">ConsiderUnverifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">PieceCidBlocklist</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token key property">ExpectedSealDuration</span> <span class="token punctuation">=</span> <span class="token string">&quot;24h0m0s&quot;</span>
+<span class="token key property">MaxDealStartDelay</span> <span class="token punctuation">=</span> <span class="token string">&quot;336h0m0s&quot;</span>
+<span class="token key property">PublishMsgPeriod</span> <span class="token punctuation">=</span> <span class="token string">&quot;30s&quot;</span>
+<span class="token key property">MaxDealsPerPublishMsg</span> <span class="token punctuation">=</span> <span class="token number">8</span>
+<span class="token key property">MaxProviderCollateralMultiplier</span> <span class="token punctuation">=</span> <span class="token number">2</span>
+<span class="token key property">Filter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+<span class="token key property">RetrievalFilter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+<span class="token key property">TransfePath</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+<span class="token key property">MaxPublishDealsFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+<span class="token key property">MaxMarketBalanceAddFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">AddressConfig</span><span class="token punctuation">]</span>
+  <span class="token key property">DisableWorkerFallback</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+  
+<span class="token punctuation">[</span><span class="token table class-name">RetrievalPricing</span><span class="token punctuation">]</span>
+  <span class="token key property">Strategy</span> <span class="token punctuation">=</span> <span class="token string">&quot;default&quot;</span>
+  <span class="token punctuation">[</span><span class="token table class-name">RetrievalPricing.Default</span><span class="token punctuation">]</span>
+    <span class="token key property">VerifiedDealsFreeTransfer</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token punctuation">[</span><span class="token table class-name">RetrievalPricing.External</span><span class="token punctuation">]</span>
+    <span class="token key property">Path</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+</code></pre></div><p>在目前的 <code>venus-market</code> 实现中，所有的矿工共用一份配置，无法单独为某个矿工配置交易属性。</p> <h3 id="延伸问题"><a href="#延伸问题" class="header-anchor">#</a> 延伸问题</h3> <ul><li><p>批量发单的问题: <code>market-client</code> 需要支持批量发单：自动切分文件、发单；</p></li> <li><p><code>venus-market</code> 统一 <code>pool-run</code> 和 <code>solo-run</code> 两种部署模式为一种，倾向于部署在链下。</p></li></ul> <h2 id="specification-feature-spec"><a href="#specification-feature-spec" class="header-anchor">#</a> Specification (feature Spec)</h2> <h3 id="属性配置"><a href="#属性配置" class="header-anchor">#</a> 属性配置</h3> <ul><li>有一套全局的属性表，当矿工没有独立配置时采用全局配置；</li> <li>支持矿工有独立的属性表；</li> <li>提供更新属性的 <code>API</code>及界面。</li></ul> <p>支持多矿工属性的配置项如下：</p> <div class="language-toml extra-class"><pre class="language-toml"><code><span class="token comment"># global</span>
+<span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig</span><span class="token punctuation">]</span>
+  <span class="token key property">ConsiderOnlineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token key property">ConsiderOfflineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token key property">ConsiderOnlineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token key property">ConsiderOfflineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token key property">ConsiderVerifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token key property">ConsiderUnverifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+  <span class="token key property">PieceCidBlocklist</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token key property">ExpectedSealDuration</span> <span class="token punctuation">=</span> <span class="token string">&quot;24h0m0s&quot;</span>
+  <span class="token key property">MaxDealStartDelay</span> <span class="token punctuation">=</span> <span class="token string">&quot;336h0m0s&quot;</span>
+  <span class="token key property">PublishMsgPeriod</span> <span class="token punctuation">=</span> <span class="token string">&quot;1h0m0s&quot;</span>
+  <span class="token key property">MaxDealsPerPublishMsg</span> <span class="token punctuation">=</span> <span class="token number">8</span>
+  <span class="token key property">MaxProviderCollateralMultiplier</span> <span class="token punctuation">=</span> <span class="token number">2</span>
+  <span class="token key property">Filter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key property">RetrievalFilter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key property">TransferPath</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key property">MaxPublishDealsFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+  <span class="token key property">MaxMarketBalanceAddFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+  <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing</span><span class="token punctuation">]</span>
+    <span class="token key property">Strategy</span> <span class="token punctuation">=</span> <span class="token string">&quot;default&quot;</span>
+    <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing.Default</span><span class="token punctuation">]</span>
+      <span class="token key property">VerifiedDealsFreeTransfer</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+    <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing.External</span><span class="token punctuation">]</span>
+      <span class="token key property">Path</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.AddressConfig</span><span class="token punctuation">]</span>
+    <span class="token key property">DisableWorkerFallback</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+
+<span class="token comment"># 每个矿工的属性表，没有配置则使用全局配置</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token table class-name">Miners</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+  <span class="token key property">Addr</span> <span class="token punctuation">=</span> <span class="token string">&quot;f01000&quot;</span>
+  <span class="token key property">Account</span> <span class="token punctuation">=</span> <span class="token string">&quot;testuser01&quot;</span>
+  
+   <span class="token key property">ConsiderOnlineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderOfflineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderOnlineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderOfflineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderVerifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderUnverifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">PieceCidBlocklist</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+   <span class="token key property">ExpectedSealDuration</span> <span class="token punctuation">=</span> <span class="token string">&quot;24h0m0s&quot;</span>
+   <span class="token key property">MaxDealStartDelay</span> <span class="token punctuation">=</span> <span class="token string">&quot;336h0m0s&quot;</span>
+   <span class="token key property">PublishMsgPeriod</span> <span class="token punctuation">=</span> <span class="token string">&quot;1h0m0s&quot;</span>
+   <span class="token key property">MaxDealsPerPublishMsg</span> <span class="token punctuation">=</span> <span class="token number">8</span>
+   <span class="token key property">MaxProviderCollateralMultiplier</span> <span class="token punctuation">=</span> <span class="token number">2</span>
+   <span class="token key property">Filter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token key property">RetrievalFilter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token key property">TransferPath</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token key property">MaxPublishDealsFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+   <span class="token key property">MaxMarketBalanceAddFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+   <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing</span><span class="token punctuation">]</span>
+     <span class="token key property">Strategy</span> <span class="token punctuation">=</span> <span class="token string">&quot;default&quot;</span>
+     <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing.Default</span><span class="token punctuation">]</span>
+       <span class="token key property">VerifiedDealsFreeTransfer</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+     <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing.External</span><span class="token punctuation">]</span>
+       <span class="token key property">Path</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.AddressConfig</span><span class="token punctuation">]</span>
+     <span class="token key property">DisableWorkerFallback</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+      
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token table class-name">Miners</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+  <span class="token key property">Addr</span> <span class="token punctuation">=</span> <span class="token string">&quot;f01002&quot;</span>
+  <span class="token key property">Account</span> <span class="token punctuation">=</span> <span class="token string">&quot;testuser02&quot;</span>
+  
+   <span class="token key property">ConsiderOnlineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderOfflineStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderOnlineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderOfflineRetrievalDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderVerifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">ConsiderUnverifiedStorageDeals</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+   <span class="token key property">PieceCidBlocklist</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+   <span class="token key property">ExpectedSealDuration</span> <span class="token punctuation">=</span> <span class="token string">&quot;24h0m0s&quot;</span>
+   <span class="token key property">MaxDealStartDelay</span> <span class="token punctuation">=</span> <span class="token string">&quot;336h0m0s&quot;</span>
+   <span class="token key property">PublishMsgPeriod</span> <span class="token punctuation">=</span> <span class="token string">&quot;1h0m0s&quot;</span>
+   <span class="token key property">MaxDealsPerPublishMsg</span> <span class="token punctuation">=</span> <span class="token number">8</span>
+   <span class="token key property">MaxProviderCollateralMultiplier</span> <span class="token punctuation">=</span> <span class="token number">2</span>
+   <span class="token key property">Filter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token key property">RetrievalFilter</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token key property">TransferPath</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token key property">MaxPublishDealsFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+   <span class="token key property">MaxMarketBalanceAddFee</span> <span class="token punctuation">=</span> <span class="token string">&quot;0 FIL&quot;</span>
+   <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing</span><span class="token punctuation">]</span>
+     <span class="token key property">Strategy</span> <span class="token punctuation">=</span> <span class="token string">&quot;default&quot;</span>
+     <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing.Default</span><span class="token punctuation">]</span>
+       <span class="token key property">VerifiedDealsFreeTransfer</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+     <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.RetrievalPricing.External</span><span class="token punctuation">]</span>
+       <span class="token key property">Path</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+   <span class="token punctuation">[</span><span class="token table class-name">CommonProviderConfig.AddressConfig</span><span class="token punctuation">]</span>
+     <span class="token key property">DisableWorkerFallback</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+</code></pre></div><h3 id="用户界面"><a href="#用户界面" class="header-anchor">#</a> 用户界面</h3> <ul><li><code>venus-market</code> 的命令行;</li> <li><code>venus-sector-manager/venus-tools</code> 的命令行(可选);</li></ul> <h2 id="design-rationale-设计思路"><a href="#design-rationale-设计思路" class="header-anchor">#</a> Design Rationale (设计思路)</h2> <h2 id="backwards-compatibility-兼容性"><a href="#backwards-compatibility-兼容性" class="header-anchor">#</a> Backwards Compatibility（兼容性）</h2> <p>本需求的实现会改变配置项的结构，需要实现配置文件的自动升级.</p> <h2 id="test-cases-测试用例"><a href="#test-cases-测试用例" class="header-anchor">#</a> Test Cases (测试用例)</h2> <ul><li>配置文件自动升级；</li> <li>矿工交易属性可通过命令行或手动改配置文件设置；</li></ul> <h2 id="security-considerations-安全考量"><a href="#security-considerations-安全考量" class="header-anchor">#</a> Security Considerations (安全考量)</h2> <h2 id="implementation-实施"><a href="#implementation-实施" class="header-anchor">#</a> Implementation（实施）</h2></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ipfs-force-community/damocles-docs/edit/main/docs/zh/developer/README.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2023/6/5 07:11:55</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/zh/developer/understand-boost.html">
+        Boost 调研
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3b2f200c.js" defer></script><script src="/assets/js/2.80641b54.js" defer></script><script src="/assets/js/23.ce31993f.js" defer></script>
+  </body>
+</html>
