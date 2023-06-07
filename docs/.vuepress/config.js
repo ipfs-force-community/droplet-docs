@@ -195,6 +195,7 @@ module.exports = {
                         title: '功能设计',
                         collapsable: false,
                         children: [
+                            ['batch-deals.md', '批量发单'],
                             ['', '多节点配置文件支持'],
                         ]
                     },
