@@ -174,8 +174,8 @@ module.exports = {
                         title: '配置',
                         collapsable: false,
                         children: [
-                            ['market-client-config.md', 'market-client配置', "https://github.com/filecoin-project/venus-market/blob/master/docs/zh/market-client%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
-                            ['market-config.md', 'venus-market配置', "https://github.com/filecoin-project/venus-market/blob/master/docs/zh/venus-market%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
+                            ['market-client-config.md', 'droplet-client 配置', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/droplet-client%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
+                            ['market-config.md', 'droplet 配置', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/droplet%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
                         ]
                     },
                     {
