@@ -32,7 +32,7 @@
 
 :tipping_hand_woman: **无论是存储交易还是检索交易，其协议的执行过程都是自动的，期间会发送消息上链，故需保证交易双方的消息都可以正常签名。交易过程存在必要的 `fil` 流转，相关地址需要有足够的余额，否则交易将无法达成。**
 
-## 配置启动venus-market
+## 配置启动 venus-market
 
 ### 初始化
 
@@ -50,7 +50,7 @@
 --signer-type="gateway"
 ```
 
-生成的服务组件配置参考:
+生成的服务组件配置参考：
 ```toml
 [Node]
   Url = "/ip4/192.168.200.151/tcp/3455"
@@ -74,7 +74,7 @@
 
 - 链下模式
 
-配合 `lotus fullnode` 的启动方式:
+配合 `lotus fullnode` 的启动方式：
 
 ```
 ./venus-market run \
@@ -83,7 +83,7 @@
 --signer-type="lotusnode"
 ```
 
-生成的服务组件配置参考:
+生成的服务组件配置参考：
 ```toml
 [Node]
   Url = "/ip4/127.0.0.1/tcp/1234"
@@ -103,7 +103,7 @@
   Token = ""
 ```
 
-使用链服务和 `venus-wallet` 的启动方式:
+使用链服务和 `venus-wallet` 的启动方式：
 
 ```
 ./venus-market run \
@@ -116,7 +116,7 @@
 --signer-type="wallet"
 ```
 
-生成的服务组件配置参考:
+生成的服务组件配置参考：
 ```toml
 [Node]
   Url = "/ip4/192.168.200.151/tcp/3455"
@@ -147,11 +147,11 @@ $ ./venus-wallet auth api-info --perm=sign
 
 :tipping_hand_woman: **初始化命令执行成功后将会生成`venus-market repo`,在使用时需根据实际环境配置。**
 
-`venus-market` 首次启动时会生成配置项，默认目录为: `~/.venusmarket/config.toml`,接下来我们将介绍常用配置项。
+`venus-market` 首次启动时会生成配置项，默认目录为：`~/.venusmarket/config.toml`,接下来我们将介绍常用配置项。
 
 ### 通用配置
 
-`venus-wallet` 的配置项说明参考 [venus-market配置](./venus-market配置解释.md)，这里我们对比较常用的配置项进行说明。
+`venus-wallet` 的配置项说明参考 [venus-market 配置](./venus-market配置解释.md)，这里我们对比较常用的配置项进行说明。
 
 *tips:* 修改完配置文件之后需要重启`venus-market`服务：
 
@@ -182,7 +182,7 @@ $ nohup ./venus-market run > market.log 2>&1 &
 
 #### `API` 监听配置
 
-`venus-market` 默认监听端口为 `127.0.0.1:41235`, 为了支持不同网络的访问请求, 需要修改`API`的监听地址:
+`venus-market` 默认监听端口为 `127.0.0.1:41235`, 为了支持不同网络的访问请求，需要修改`API`的监听地址：
 
 ```yuml
 [API]
@@ -191,7 +191,7 @@ ListenAddress = "/ip4/0.0.0.0/tcp/41235"
  
 #### `PublishMsgPeriod` 配置
 
-`venus-market` 在收到 `market-client` 的订单时, 并不会马上就发布 `ClientDealProposal` 消息,会等待一定的时间, 由配置文件中的 `PublishMsgPeriod` 项来控制，在测试时可以将此项设置为较小值减少等待时间。下面的设置，将等待时间设置为10秒。
+`venus-market` 在收到 `market-client` 的订单时，并不会马上就发布 `ClientDealProposal` 消息，会等待一定的时间，由配置文件中的 `PublishMsgPeriod` 项来控制，在测试时可以将此项设置为较小值减少等待时间。下面的设置，将等待时间设置为 10 秒。
 
 ```yuml
 PublishMsgPeriod = "10s"
@@ -270,7 +270,7 @@ PublishMsgPeriod = "10s"
 
 :::
 
-## venus-market代理libp2p监听
+## venus-market 代理 libp2p 监听
 
 将 `venus-market` 设置为 `miner` 的 `libp2p` 监听代理就是将特定 `miner` 的市场服务的入口设置为当前运行的 `venus-market` 实例。
 
@@ -325,7 +325,7 @@ Price per GiB/Epoch  Verified  Min. Piece Size (padded)  Max. Piece Size (padded
 ./venus-market retrieve ask set t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
 ```
 
-同时，也可以设置数据检索订单的价格，不设置时，默认为0.
+同时，也可以设置数据检索订单的价格，不设置时，默认为 0.
 ```bash
 ./venus-market retrieve ask set \
 --price 0.02fil \
@@ -335,7 +335,7 @@ t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igk
 ```
 
 
-## 配置启动market-client
+## 配置启动 market-client
 
 `market-client` 正常运行需要同步节点、签名节点（`venus fullnode` 和 `lotus fullnode` 可以作为签名节点）、消息节点（`venus fullnode` 和 `lotus fullnode` 可以作为消息节点）及 `venus-market`，故其可以灵活配置，只要保证消息能够正常签名并上链即可。
 
@@ -357,7 +357,7 @@ t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igk
 --signer-toke=<wallet-token> \
 --addr=<signer address> \
 ```
-> `venus-wallet` 生成具有签名权限的 `token` 请参考上文.
+> `venus-wallet` 生成具有签名权限的 `token` 请参考上文。
 
 
 - 连接 `lotus fullnode` 启动
@@ -378,7 +378,7 @@ t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igk
 --addr=<signer address> \
 ```
 
-这些配置项也可以在配置文件中设置，参见[market-client配置](./market-client配置解释.md)
+这些配置项也可以在配置文件中设置，参见[market-client 配置](./market-client配置解释.md)
 
 
 ## 存储订单
@@ -430,7 +430,7 @@ Deal (t01051) CID: bafyreihiln2ha6eaaos7kuhwpnvjvjlxmjnpsklym6hhucu2z776bf2or4
 
 然后等待订单消息上链，以及存储提供商完成数据封装即可。
 
-`market-client` 查看订单:
+`market-client` 查看订单：
 ```shell
 ./market-client storage deals list
 DealCid      DealId  Provider  State                          On Chain?  Slashed?  PieceCID     Size    Price                    Duration  Verified
@@ -447,13 +447,13 @@ DealCid      DealId  Provider  State                          On Chain?  Slashed
 Import 1642643014364955003, Root bafk2bzaceaf4sallirkt63fqrojz5gaut7akiwxrclcsymqelqad7man3hc2c
 ```
 
-2.转为CAR文件
+2.转为 CAR 文件
 
 ```bash
 ./market-client data generate-car ./README.md ./readme.md.car
 ```
 
-3.计算CAR文件的`CID`和`Piece size`
+3.计算 CAR 文件的`CID`和`Piece size`
 
 ```shell
 ./market-client data commP ./readme.md.car
@@ -474,16 +474,16 @@ f01051 \
 bafyreiecguaxgtmgcanfco6huni4d6h6zs3w3bznermmiurtdos7r6hftm
 ```
 
-- `manual-piece-cid`: 在第3步计执行`data commP`后输出的`CID`
-- `manual-piece-size`: 在第3步执行`data commP`后输出的`Piece size`.需要注意的是, 在使用这个参数时, 这个值需要转换成`byte`的大小, 在这里为3.969kib转换成byte的大小是4064.
-之后4个参数分别是:
+- `manual-piece-cid`: 在第 3 步计执行`data commP`后输出的`CID`
+- `manual-piece-size`: 在第 3 步执行`data commP`后输出的`Piece size`.需要注意的是，在使用这个参数时，这个值需要转换成`byte`的大小，在这里为 3.969kib 转换成 byte 的大小是 4064.
+之后 4 个参数分别是：
 - 第一步执行`import`命令后输入的`Root`
-- 矿工ID
-- 协商支付订单的费用`0.01fil`, **这个值必须大于旷工设置的`storage ask`中的最小值, 不然订单会被拒绝掉.
-- 合约周期, 必须大于等于180天, 这个值也需要换成epoch为单位, 每个epoch=30秒, 示例中:518400 = 180天.
+- 矿工 ID
+- 协商支付订单的费用`0.01fil`, **这个值必须大于旷工设置的`storage ask`中的最小值，不然订单会被拒绝掉。
+- 合约周期，必须大于等于 180 天，这个值也需要换成 epoch 为单位，每个 epoch=30 秒，示例中:518400 = 180 天。
 
-最后的输出`bafyreidfs2w7lxacq6zpqck7q4zimyitidxyahojf7dbbuz5zr7irdlmqa`为propose的cid.
-线上订单一样, 此时可以通过market-client查看deal信息, 订单的最后状态会停止在`StorageDealWaitingForData`
+最后的输出`bafyreidfs2w7lxacq6zpqck7q4zimyitidxyahojf7dbbuz5zr7irdlmqa`为 propose 的 cid.
+线上订单一样，此时可以通过 market-client 查看 deal 信息，订单的最后状态会停止在`StorageDealWaitingForData`
 
 ```shell
 ./market-client storage deals list
@@ -496,15 +496,15 @@ DealCid      DealId  Provider  State                          On Chain?        S
 ```shell
 2022-01-20T12:47:27.966+0800	ERROR	storagemarket_impl	clientstates/client_states.go:324	deal bafyreif2k2e4acraxk33z3llwo5gqmk32tfrdj2kocjanojbfbf6vj72vm failed: adding market funds failed: estimating gas used: message execution failed: exit SysErrInsufficientFunds(6)
 ```
-说明钱包余额不足,调用命令 `./market-client actor-funds add 100fil` 充值后重新执行命令.
+说明钱包余额不足，调用命令 `./market-client actor-funds add 100fil` 充值后重新执行命令。
 
 5. 导入离线订单的数据文件
-需要将之前第2步生成的`.car`文件线下传输到venus-market, 并通过venus-market命令导入数据:
+需要将之前第 2 步生成的`.car`文件线下传输到 venus-market, 并通过 venus-market 命令导入数据：
 ```shell
 ./venus-market storage-deals import-data bafyreiecguaxgtmgcanfco6huni4d6h6zs3w3bznermmiurtdos7r6hftm ./readme.md.car
 ```
 
-再次查看状态, 订单状态更新为`StorageDealPublishing`:
+再次查看状态，订单状态更新为`StorageDealPublishing`:
 ```shell
 ./market-client storage deals list
 DealCid      DealId  Provider  State                          On Chain?        Slashed?  PieceCID     Size       Price                    Duration  Verified  
