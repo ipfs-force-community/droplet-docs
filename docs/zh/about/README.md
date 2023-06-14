@@ -14,6 +14,6 @@
  
 - venus-docs: [venus.filecoin.io](venus.filecoin.io)
 - VenusHub: [venushub.io](venushub.io)
-- Github: [venus](https://github.com/filecoin-project/venus)
+- Github: [droplet](https://github.com/ipfs-force-community/droplet), [venus](https://github.com/filecoin-project/venus), [damocles](https://github.com/ipfs-force-community/damocles)
 - Social Media: [Twitter](https://twitter.com/venus_filecoin), [Wechat](https://mp.weixin.qq.com/s/p4_ch03QeMMXxPyakr_8XQ)
 - 安全审计报告：[link](https://leastauthority.com/static/publications/LeastAuthority_Filecoin_Foundation_Venus_Final_Audit_Report.pdf)
