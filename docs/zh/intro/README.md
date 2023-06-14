@@ -1,4 +1,4 @@
-## venus-market 是什么?
+## venus-market 是什么？
 
 `venus-market` 是 `Venus` 系统的存储市场及检索市场解决方案，包括用于服务端的 `venus-market` 组件和用于客户端的 `market-client` 组件。目前迭代到 `V2` 版本。 
 
@@ -10,7 +10,7 @@
 
 ### 多传输协议支持
 
-订单`piece`数据的传输将不仅支持默认的`graphsync`，还支持OSS，HTTP等其他更有韧性，可断点续传的数据传输协议。保证接单过程中数据传输的稳定性。
+订单`piece`数据的传输将不仅支持默认的`graphsync`，还支持 OSS，HTTP 等其他更有韧性，可断点续传的数据传输协议。保证接单过程中数据传输的稳定性。
 
 ### 轻量级客户端
 
@@ -22,4 +22,4 @@
 
 ### 开发者友好
 
-更多`venus-market v2`的API以及SDK将陆续开放给开发者。`venus-market v2`将成为一个开放平台，让开发者在上面实现他们需要的定制化需求。
+更多`venus-market v2`的 API 以及 SDK 将陆续开放给开发者。`venus-market v2`将成为一个开放平台，让开发者在上面实现他们需要的定制化需求。

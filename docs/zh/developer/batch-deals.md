@@ -1,4 +1,4 @@
-<!--着重借鉴了FIP的模版：[这里](https://raw.githubusercontent.com/filecoin-project/FIPs/master/templates/template_FTP.md)-->
+<!--着重借鉴了 FIP 的模版：[这里](https://raw.githubusercontent.com/filecoin-project/FIPs/master/templates/template_FTP.md)-->
 
 ## Simple Summary (概述)
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the design.-->
@@ -8,7 +8,7 @@
 
 ## Abstract (功能简介)
 <!--A short (~200 word) description of the technical issue being addressed.-->
-<!--一个简短的200字以内的，描述当前的功能设计。-->
+<!--一个简短的 200 字以内的，描述当前的功能设计。-->
 
 `droplet-client` 需要实现以下功能：
 
@@ -24,13 +24,13 @@
 
 ## Motivation (来源/背景)
 <!--The motivation is critical for new feature design that want to change the product. It should clearly explain why the existing product specification is inadequate to address the problem that this new feature solves.-->
-<!--功能设计动机是很重要的。当前现有产品的哪儿些不足，功能需求的来源和背景，等等。在这个feature（设计）完成后，哪儿些问题会得到解决？-->
+<!--功能设计动机是很重要的。当前现有产品的哪儿些不足，功能需求的来源和背景，等等。在这个 feature（设计）完成后，哪儿些问题会得到解决？-->
 
 目前 `droplet-client` 一次只能发布一个订单，当有大量订单需要发布时，需要一个一个发，发单的效率并不高。批量发单可以一次对多个 `SP` 发布多个订单，可以提高效率。
 
 ## Specification (feature Spec)
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow others to easily translate into product implementations. -->
-<!--具体的技术spec，需要对feature的syntax，semantics进行描述。Spec需要能够让别人更容易的按照spec去实现这个feature。-->
+<!--具体的技术 spec，需要对 feature 的 syntax，semantics 进行描述。Spec 需要能够让别人更容易的按照 spec 去实现这个 feature。-->
 
 ### 名词解释
 
@@ -39,7 +39,7 @@
 - SP：存储提供者
 - 发单地址：发单时使用的地址，可以是具有 `datacap` 的地址
 - go-graphsplit：一种用于将数据集切分成固定大小的 car 文件的工具
-- datacap发单要求：
+- datacap 发单要求：
   * Storage provider should not exceed 25% of total datacap(`client` 给一个 `SP` 发的 `DC` 订单不能超过  `SP` 总 `DC` 订单的 25%)
   * Storage provider should not be storing duplicate data for more than 20%(`SP` 不能超过 20% 的重复数据)
   * Storage provider should have published its public IP address(`SP` 需要公开公告 IP 地址)
@@ -80,7 +80,7 @@ DealsBatchImportData(ctx context.Context, refs market.ImportDataRefs) ([]*market
 
 ## Design Rationale (设计思路)
 <!--The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work. -->
-<!--设计思路基于上面的spec，描述了设计上的一些选择，以及为什么使用了这些选择。-->
+<!--设计思路基于上面的 spec，描述了设计上的一些选择，以及为什么使用了这些选择。-->
 
 存储离线订单使用 JSON marshal 是为了方便以后加字段
 
