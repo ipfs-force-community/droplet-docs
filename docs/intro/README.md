@@ -1,6 +1,6 @@
 ## What is Droplet?
 
-`droplet-market` version 2 is the latest release for a Venus storage system to handle deal-making process. It grants storage providers a seamless deal-taking experience while allowing maximum flexibility if storage providers still choose to take matters into their own hands.   
+`droplet` is the product within a Venus storage system to handle deal-making and data retrieval. It grants storage providers a seamless deal-taking experience while allowing maximum flexibility.  
 
 ## Features
 
