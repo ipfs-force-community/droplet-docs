@@ -98,37 +98,13 @@ module.exports = {
                             ['architecture.md', 'Architecture'],
                         ]
                     },
-                    {
-                        title: 'Deployment',
-                        collapsable: false,
-                        children: [
-                            ['getting-started.md', 'Getting started', "https://github.com/filecoin-project/venus-market/blob/master/docs/en/getting-started.md"],
-                            ['market-config.md', 'Market Configurations', "https://github.com/filecoin-project/venus-market/blob/master/docs/en/market-configurations.md"],
-                            ['client-config.md', 'Client Configurations', "https://github.com/filecoin-project/venus-market/blob/master/docs/en/market-client-configurations.md"],
-                            ['migrate_market_v1_to_v2.md', 'Upgrading to version 2.0'],
-                        ]
-                    },
-                    {
-                        title: 'Storage deals',
-                        collapsable: false,
-                        children: [
-                            ['prep-datasets.md', 'preping large datasets'],
-                        ]
-                    },
-                    {
-                        title: 'Other Features',
-                        collapsable: false,
-                        children: [
-                            ['other.md', 'More features...'],
-                        ]
-                    },
                     ],
                     '/operation/': [
                     {
                         title: 'Deployment',
                         collapsable: false,
                         children: [
-                            ['', 'Getting started', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/getting-started.md"],
+                            ['', 'Getting started'],
                         ]
                     },
                     {
