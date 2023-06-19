@@ -1,20 +1,20 @@
-## What is venus-market?
+## What is Droplet?
 
-`venus-market` version 2 is the latest release for a Venus storage system to handle deal-making process. It grants storage providers a seamless deal-taking experience while allowing maximum flexibility if storage providers still choose to take matters into their own hands.   
+`droplet-market` version 2 is the latest release for a Venus storage system to handle deal-making process. It grants storage providers a seamless deal-taking experience while allowing maximum flexibility if storage providers still choose to take matters into their own hands.   
 
 ## Features
 
-### Chain service deployment
+### Multi minerID support
 
-One of the most distinct features that `venus-market v2` has is that if a storage provider is using a chain service with `venus-market v2`, then she/he doesn’t need to deploy a market node locally at all, making the whole deal-taking experience just like sealing a CC sector!
+One of the most distinct features that `droplet` has is that the support of storage deal and retrieval functionalities for multiple minerIDs, saving both capEx and opEx to support your sroage providing business. 
 
 ### Multiple data transfer protocol support
 
-The transfer of deal data from the chain service to storage provider will not only support graphsync, OSS but also other popular data transfer protocols like HTTP (coming soon).
+The transfer of deal data from the chain service to storage provider will not only support graphsync, OSS but also other popular data transfer protocols like HTTP.
 
 ### Light weight storage client
 
-`venus-market v2` comes with a light weight client that can be used to make storage deals without the need of deploying a fully synced local node. A storage client can go on making storage deals once the client software connects to a Venus chain service.
+`droplet` comes with a light weight client that can be used to make storage deals without the need of deploying a fully synced local node. A storage client can go on making storage deals once the client software connects to a Venus Sophon service.
 
 ### Compatibility with other implementation
 

@@ -81,6 +81,10 @@ module.exports = {
                     link: '/intro/'
                 },
                 {
+                    text: 'Deployment & Operations',
+                    link: '/operation/'
+                },
+                {
                     text: 'About',
                     link: '/about/'
                 },
@@ -116,6 +120,37 @@ module.exports = {
                         collapsable: false,
                         children: [
                             ['other.md', 'More features...'],
+                        ]
+                    },
+                    ],
+                    '/operation/': [
+                    {
+                        title: 'Deployment',
+                        collapsable: false,
+                        children: [
+                            ['', 'Getting started', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/getting-started.md"],
+                        ]
+                    },
+                    {
+                        title: 'Configurations',
+                        collapsable: false,
+                        children: [
+                            ['market-config.md', 'Droplet config', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/droplet-configurations.md"],
+                            ['client-config.md', 'Client config', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/droplet-client-configurations.md"],
+                        ]
+                    },
+                    {
+                        title: 'Operations',
+                        collapsable: false,
+                        children: [
+                            ['prep-datasets.md', 'Preping large datasets'],
+                        ]
+                    },
+                    {
+                        title: 'Migration',
+                        collapsable: false,
+                        children: [
+                            ['migrate-v1-to-v2.md', 'Upgrading to droplet 2.x'],
                         ]
                     },
                     ],
