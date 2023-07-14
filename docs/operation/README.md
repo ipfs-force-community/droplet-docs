@@ -322,12 +322,12 @@ Price per GiB/Epoch Verified Min. Piece Size (padded) Max. Piece Size (padded) E
 The storage provider should at least set the payment address
 
 ```bash
-./droplet retrieve ask set t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
+./droplet retrieval ask set t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
 ```
 
 At the same time, you can also set the price of the data retrieval request, if not set, the default is 0.
 ```bash
-./droplet retrieve ask set \
+./droplet retrieval ask set \
 --price 0.02fil \
 --unseal-price 0.01fil \
 --payment-interval 1MB \
