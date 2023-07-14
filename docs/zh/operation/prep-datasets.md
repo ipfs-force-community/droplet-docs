@@ -27,7 +27,7 @@ Total Size: 1.2 TiB
 
 开始下载文件到`/mnt/nas/venus-data`目录下：
 ```shell
-$ nohup aws s3 sync s3://stpubdata/tess/public/ffi/s0006/2018 /mnt/nas/venus-data/tess/public/ffi/s0006/2018 --no-sign-request 2>&1 > download.log &
+$ nohup aws s3 sync s3://stpubdata/tess/public/ffi/s0006/2018 /mnt/nas/venus-data/tess/public/ffi/s0006/2018 --no-sign-request > download.log 2>&1 &
 ```
 下载速度根据用户自身的机房出口网络情况而定
 
