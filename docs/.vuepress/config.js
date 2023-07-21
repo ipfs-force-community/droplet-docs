@@ -197,6 +197,7 @@ module.exports = {
                             ['migrate-offline-deal.md', '迁移离线订单', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%BF%81%E7%A7%BB%E8%AE%A2%E5%8D%95.md"],
                             ['batch-deal.md', '批量发单', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E6%89%B9%E9%87%8F%E5%8F%91%E5%8D%95.md"],
                             ['extend-claim.md', 'DC 订单续期', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/datacap%E7%BB%AD%E6%9C%9F.md"],
+                            ['http-retrieval.md', 'http 检索', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E6%A8%A1%E6%8B%9F%E5%AE%98%E6%96%B9%E6%9C%BA%E5%99%A8%E4%BA%BAHTTP%E6%96%B9%E5%BC%8F%E6%A3%80%E7%B4%A2.md"],
                             ['deal-filter.md', '订单过滤器', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%AE%A2%E5%8D%95%E8%BF%87%E6%BB%A4%E5%99%A8.md"],
                             ['metrics.md', 'Metrics 指标', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/metric%E6%8C%87%E6%A0%87%E8%A7%A3%E9%87%8A.md"],
                             ['rebuild-signature.md', '签名重构', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E7%AD%BE%E5%90%8D%E9%87%8D%E6%9E%84.md"],
