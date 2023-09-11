@@ -211,12 +211,12 @@ Price per GiB/Epoch  Verified  Min. Piece Size (padded)  Max. Piece Size (padded
 存储服务提供商至少应设置收款地址
 
 ```bash
-./droplet retrieve ask set t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
+./droplet retrieval ask set t3ueb62v5kbyuvwo5tuyzpvds2bfakdjeg2s33p47buvbfiyd7w5fwmeilobt5cqzi673s5z6i267igkgxum6a
 ```
 
 同时，也可以设置数据检索订单的价格，不设置时，默认为0.
 ```bash
-./droplet retrieve ask set \
+./droplet retrieval ask set \
 --price 0.02fil \
 --unseal-price 0.01fil \
 --payment-interval 1MB \
