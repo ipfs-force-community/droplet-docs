@@ -178,7 +178,7 @@ module.exports = {
                         title: '部署',
                         collapsable: false,
                         children: [
-                            ['', '快速启用'],
+                            ['', '快速启用', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E5%BF%AB%E9%80%9F%E5%90%AF%E7%94%A8.md"],
                         ]
                     },
                     {
