@@ -101,35 +101,35 @@ module.exports = {
                     },
                     ],
                     '/operation/': [
-                    {
-                        title: 'Deployment',
-                        collapsable: false,
-                        children: [
-                            ['', 'Getting started'],
-                        ]
-                    },
-                    {
-                        title: 'Configurations',
-                        collapsable: false,
-                        children: [
-                            ['market-config.md', 'Droplet config', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/droplet-configurations.md"],
-                            ['client-config.md', 'Client config', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/droplet-client-configurations.md"],
-                        ]
-                    },
-                    {
-                        title: 'Operations',
-                        collapsable: false,
-                        children: [
-                            ['prep-datasets.md', 'Preping large datasets'],
-                        ]
-                    },
-                    {
-                        title: 'Migration',
-                        collapsable: false,
-                        children: [
-                            ['migrate-v1-to-v2.md', 'Upgrading to droplet 2.x'],
-                        ]
-                    },
+                        {
+                            title: 'Deployment',
+                            collapsable: false,
+                            children: [
+                                ['start.md', 'Getting started', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/getting-started.md"],
+                            ]
+                        },
+                        {
+                            title: 'Configurations',
+                            collapsable: false,
+                            children: [
+                                ['market-config.md', 'Droplet config', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/droplet-configurations.md"],
+                                ['client-config.md', 'Client config', "https://github.com/ipfs-force-community/droplet/blob/master/docs/en/droplet-client-configurations.md"],
+                            ]
+                        },
+                        {
+                            title: 'Operations',
+                            collapsable: false,
+                            children: [
+                                ['prep-datasets.md', 'Preping large datasets'],
+                            ]
+                        },
+                        {
+                            title: 'Migration',
+                            collapsable: false,
+                            children: [
+                                ['migrate-v1-to-v2.md', 'Upgrading to droplet 2.x'],
+                            ]
+                        },
                     ],
                     '/about/': [{
                         title: '',
@@ -147,22 +147,22 @@ module.exports = {
                 title: '执剑人',
                 description: '执剑人（原Venus算力服务）是一个Filecoin存储算力解决方案',
                 nav: [
-                {
-                    text: '功能介绍',
-                    link: '/zh/intro/'
-                },
-                {
-                    text: '部署/运维',
-                    link: '/zh/operation/'
-                },
-                {
-                    text: '研发/设计',
-                    link: '/zh/developer/'
-                },
-                {
-                    text: '关于',
-                    link: '/zh/about/'
-                },
+                    {
+                        text: '功能介绍',
+                        link: '/zh/intro/'
+                    },
+                    {
+                        text: '部署/运维',
+                        link: '/zh/operation/'
+                    },
+                    {
+                        text: '研发/设计',
+                        link: '/zh/developer/'
+                    },
+                    {
+                        text: '关于',
+                        link: '/zh/about/'
+                    },
                 ],
                 sidebar: {
                     '/zh/intro/': [{
@@ -175,35 +175,35 @@ module.exports = {
                     },
                     ],
                     '/zh/operation/': [
-                    {
-                        title: '部署',
-                        collapsable: false,
-                        children: [
-                            ['', '快速启用'],
-                        ]
-                    },
-                    {
-                        title: '配置',
-                        collapsable: false,
-                        children: [
-                            ['market-client-config.md', 'droplet-client 配置', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/droplet-client%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
-                            ['market-config.md', 'droplet 配置', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/droplet%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
-                        ]
-                    },
-                    {
-                        title: '运维',
-                        collapsable: false,
-                        children: [
-                            ['prep-datasets.md', '大数据集准备'],
-                            ['migrate-offline-deal.md', '迁移离线订单', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%BF%81%E7%A7%BB%E8%AE%A2%E5%8D%95.md"],
-                            ['batch-deal.md', '批量发单', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E6%89%B9%E9%87%8F%E5%8F%91%E5%8D%95.md"],
-                            ['extend-claim.md', 'DC 订单续期', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/datacap%E7%BB%AD%E6%9C%9F.md"],
-                            ['http-retrieval.md', 'http 检索', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E6%A8%A1%E6%8B%9F%E5%AE%98%E6%96%B9%E6%9C%BA%E5%99%A8%E4%BA%BAHTTP%E6%96%B9%E5%BC%8F%E6%A3%80%E7%B4%A2.md"],
-                            ['deal-filter.md', '订单过滤器', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%AE%A2%E5%8D%95%E8%BF%87%E6%BB%A4%E5%99%A8.md"],
-                            ['metrics.md', 'Metrics 指标', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/metric%E6%8C%87%E6%A0%87%E8%A7%A3%E9%87%8A.md"],
-                            ['rebuild-signature.md', '签名重构', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E7%AD%BE%E5%90%8D%E9%87%8D%E6%9E%84.md"],
-                        ]
-                    },
+                        {
+                            title: '部署',
+                            collapsable: false,
+                            children: [
+                                ['quick_start.md', '快速启用', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E5%BF%AB%E9%80%9F%E5%90%AF%E7%94%A8.md"],
+                            ]
+                        },
+                        {
+                            title: '配置',
+                            collapsable: false,
+                            children: [
+                                ['market-client-config.md', 'droplet-client 配置', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/droplet-client%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
+                                ['market-config.md', 'droplet 配置', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/droplet%E9%85%8D%E7%BD%AE%E8%A7%A3%E9%87%8A.md"],
+                            ]
+                        },
+                        {
+                            title: '运维',
+                            collapsable: false,
+                            children: [
+                                ['prep-datasets.md', '大数据集准备'],
+                                ['migrate-offline-deal.md', '迁移离线订单', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%BF%81%E7%A7%BB%E8%AE%A2%E5%8D%95.md"],
+                                ['batch-deal.md', '批量发单', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E6%89%B9%E9%87%8F%E5%8F%91%E5%8D%95.md"],
+                                ['extend-claim.md', 'DC 订单续期', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/datacap%E7%BB%AD%E6%9C%9F.md"],
+                                ['http-retrieval.md', 'http 检索', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E6%A8%A1%E6%8B%9F%E5%AE%98%E6%96%B9%E6%9C%BA%E5%99%A8%E4%BA%BAHTTP%E6%96%B9%E5%BC%8F%E6%A3%80%E7%B4%A2.md"],
+                                ['deal-filter.md', '订单过滤器', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E8%AE%A2%E5%8D%95%E8%BF%87%E6%BB%A4%E5%99%A8.md"],
+                                ['metrics.md', 'Metrics 指标', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/metric%E6%8C%87%E6%A0%87%E8%A7%A3%E9%87%8A.md"],
+                                ['rebuild-signature.md', '签名重构', "https://github.com/ipfs-force-community/droplet/blob/master/docs/zh/%E7%AD%BE%E5%90%8D%E9%87%8D%E6%9E%84.md"],
+                            ]
+                        },
                     ],
                     '/zh/developer/': [{
                         title: '功能设计',
